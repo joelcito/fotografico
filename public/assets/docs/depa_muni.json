@@ -1,0 +1,2104 @@
+{
+    "data": [
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 1,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 122,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SUCRE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 123,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YOTALA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 124,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "POROMA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 125,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA AZURDUY"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 126,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TARVITA (VILLA ARIAS)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 127,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ZUDAÑEZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 128,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PRESTO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 129,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA MOJOCOYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 130,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ICLA (R.MUJIA)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 131,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PADILLA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 132,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TOMINA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 133,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SOPACHUY"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 134,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA ALCALÁ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 135,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EL VILLAR"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 136,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MONTEAGUDO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 137,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PABLO DE HUACARETA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 138,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TARABUCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 139,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YAMPARÁEZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 140,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CAMARGO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 141,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN LUCAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 142,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "INCAHUASI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 143,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA CHARCAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 144,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA SERRANO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 145,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA ABECIA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 146,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CULPINA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 147,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LAS CARRERAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 148,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA VACA GUZMÁN (MUYUPAMPA)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 149,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "HUACAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 150,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MACHARETI"
+                }
+            ],
+            "nombre": "CHUQUISACA"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 2,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 152,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PALCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 151,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "NUESTRA SEÑORA DE LA PAZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 153,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MECAPACA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 154,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ACHOCALLA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 155,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EL ALTO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 156,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ACHACACHI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 157,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ANCORAIMES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 158,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHUA COCANI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 159,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "HUARINA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 160,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTIAGO DE HUATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 161,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "HUATAJATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 162,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CORO CORO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 163,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CAQUIAVIRI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 164,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CALACOTO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 165,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COMANCHE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 166,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHARAÑA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 167,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "WALDO BALLIVIAN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 168,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "NAZACARA DE PACAJES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 169,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTIAGO DE CALLAPA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 170,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO ACOSTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 171,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MOCOMOCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 172,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO CARABUCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 173,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "HUMANATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 174,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ESCOMA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 175,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHUMA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 176,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "AYATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 177,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "AUCAPATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 178,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SORATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 179,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "GUANAY"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 180,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TACACOMA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 181,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "QUIABAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 182,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COMBAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 183,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TIPUANI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 184,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MAPIRI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 185,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TEOPONTE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 186,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "APOLO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 187,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PELECHUCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 188,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VIACHA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 189,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "GUAQUI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 190,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TIAHUANACU"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 191,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "DESAGUADERO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 192,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN ANDRÉS DE MACHACA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 193,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "JESÚS DE MACHACA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 194,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TARACO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 195,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LURIBAY"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 196,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAPAHAQUI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 197,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YACO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 198,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MALLA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 199,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CAIROMA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 200,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "INQUISIVI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 201,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "QUIME"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 202,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CAJUATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 203,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLQUIRI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 204,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ICHOCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 205,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LICOMA (VILLA LIBERTAD)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 206,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHULUMANI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 207,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "IRUPANA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 208,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YANACACHI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 209,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PALOS BLANCOS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 210,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LA ASUNTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 211,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUCARANI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 212,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LAJA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 213,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BATALLAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 214,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO PEREZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 215,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SICA SICA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 216,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "UMALA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 217,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "AYO AYO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 218,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CALAMARCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 219,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PATACAMAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 220,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLQUENCHA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 221,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLLANA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 222,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COROICO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 223,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CORIPATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 224,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "IXIAMAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 225,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN BUENAVENTURA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 226,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHARAZANI (GRAL.PEREZ)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 227,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CURVA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 228,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COPACABANA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 229,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PEDRO DE TIQUINA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 230,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TITO YUPANKI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 231,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PEDRO DE CURAHUARA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 232,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PAPEL PAMPA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 233,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHACARILLA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 234,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTIAGO DE MACHACA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 235,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CATACORA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 236,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CARANAVI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 237,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ALTO BENI"
+                }
+            ],
+            "nombre": "LA PAZ"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 3,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 238,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COCHABAMBA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 239,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "AIQUILE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 240,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PASORAPA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 241,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "OMEREQUE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 242,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "INDEPENDENCIA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 243,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MOROCHATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 244,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COCAPATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 245,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TARATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 246,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ANZALDO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 247,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ARBIETO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 248,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SACABAMBA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 249,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ARANI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 250,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VACAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 251,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ARQUE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 252,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TACOPAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 253,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CAPINOTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 254,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTIBAÑEZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 255,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SICAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 256,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CLIZA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 257,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TOCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 258,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TOLATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 259,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "QUILLACOLLO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 260,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SIPESIPE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 261,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TIQUIPAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 262,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VINTO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 263,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLCAPIRHUA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 264,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SACABA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 265,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLOMI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 266,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA TUNARI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 267,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TAPACARÍ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 268,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TOTORA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 269,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "POJO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 270,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "POCONA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 271,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHIMORE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 272,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO VILLARROEL"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 273,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ENTRE RIOS (BULO BULO)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 274,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MIZQUE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 275,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILA VILA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 276,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ALALAY"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 277,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUNATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 278,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA RIVERO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 279,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN BENITO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 280,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TACACHI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 281,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CUCHUMUELA (V. G.VILLARROEL)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 282,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BOLIVAR"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 283,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TIRAQUE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 284,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SHINAHOTA"
+                }
+            ],
+            "nombre": "COCHABAMBA"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 4,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 285,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ORURO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 286,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CARACOLLO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 287,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EL CHORO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 288,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SORACACHI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 289,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHALLAPATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 290,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTUARIO DE QUILLACAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 291,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CORQUE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 292,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHOQUECOTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 293,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CURAHUARA DE CARANGAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 294,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TURCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 295,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "HUACHACALLA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 296,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ESCARA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 297,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CRUZ DE MACHACAMARCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 298,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YUNGUYO DEL LITORAL *"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 299,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ESMERALDA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 300,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "POOPÓ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 301,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PAZÑA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 302,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ANTEQUERA (BOLIVAR)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 303,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "HUANUNI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 304,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MACHACAMARCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 305,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SALINAS DE GARCI MENDOZA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 306,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PAMPA AULLAGAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 307,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SABAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 308,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COIPASA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 309,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHIPAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 310,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TOLEDO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 311,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EUCALIPTUS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 312,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTIAGO DE ANDAMARCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 313,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BELÉN DE ANDAMARCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 314,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PEDRO DE TOTORA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 315,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTIAGO DE HUARI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 316,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LA RIVERA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 317,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TODOS SANTOS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 318,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CARANGAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 319,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTIAGO DE HUAYLLAMARCA"
+                }
+            ],
+            "nombre": "ORURO"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 5,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 339,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SACACA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 340,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CARIPUYO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 320,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "POTOSÍ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 321,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TINQUIPAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 322,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YOCALLA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 323,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BELÉN DE URMIRI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 324,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "UNCÍA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 325,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHAYANTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 326,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LLALLAGUA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 327,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHUQUIHUTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 328,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BETANZOS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 329,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHAQUI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 330,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TACOBAMBA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 331,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLQUECHACA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 332,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "RAVELO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 333,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "POCOATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 334,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "OCURI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 335,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PEDRO DE BUENA VISTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 336,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TORO TORO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 337,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COTAGAITA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 338,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VITICHI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 341,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TUPIZA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 342,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ATOCHA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 343,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLCHA\\\"K\\\" (V.MARTIN)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 344,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PEDRO DE QUEMES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 345,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PABLO DE LIPEZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 346,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MOJINETE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 347,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN ANTONIO DE ESMORACA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 348,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUNA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 349,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CAIZA \\\"D\\\""
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 350,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CKOCHAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 351,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "UYUNI (THOLA PAMPA)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 352,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TOMAVE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 353,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PORCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 354,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ARAMPAMPA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 355,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ACASIO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 356,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LLICA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 357,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TAHUA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 358,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLAZÓN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 359,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN AGUSTÍN"
+                }
+            ],
+            "nombre": "POTOSI"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 6,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 360,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TARIJA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 361,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PADCAYA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 362,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BERMEJO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 363,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YACUIBA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 364,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CARAPARÍ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 365,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLAMONTES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 366,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "URIONDO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 367,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YUNCHARA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 368,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA SAN LORENZO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 369,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TOMAYAPO (EL PUENTE)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 370,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ENTRE RIOS (LA MORETA)"
+                }
+            ],
+            "nombre": "TARIJA"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 7,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 371,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTA CRUZ DE LA SIERRA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 372,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COTOCA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 373,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PORONGO (AYACUCHO)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 374,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LA GUARDIA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 375,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EL TORNO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 376,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "WARNES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 377,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "OKINAWA UNO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 378,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN IGNACIO DE VELASCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 379,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN MIGUEL DE VELASCO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 380,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN RAFAEL"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 381,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BUENA VISTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 382,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN CARLOS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 383,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "YAPACANÍ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 384,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN JUAN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 385,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN JOSE DE CHIQUITOS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 386,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PAILÓN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 387,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ROBORE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 388,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PORTACHUELO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 389,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTA ROSA DEL SARA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 390,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COLPA BELGICA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 391,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LAGUNILLAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 392,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CHARAGUA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 393,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CABEZAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 394,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CUEVO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 395,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "GUTIÉRREZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 396,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CAMIRI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 397,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BOYUIBE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 398,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VALLEGRANDE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 399,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TRIGAL"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 400,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MORO MORO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 401,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "POSTRER VALLE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 402,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUCARA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 403,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAMAIPATA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 404,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PAMPA GRANDE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 405,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MAIRANA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 406,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "QUIRUSILLAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 407,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MONTERO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 408,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "GENERAL SAAVEDRA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 409,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MINEROS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 410,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "FERNANDEZ ALONSO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 411,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PEDRO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 412,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CONCEPCIÓN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 413,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN JAVIER"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 414,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN RAMÓN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 415,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN JULIÁN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 416,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN ANTONIO DE LOMERIO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 417,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CUATRO CANADAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 418,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN MATÍAS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 419,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COMARAPA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 420,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAIPINA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 421,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO SUAREZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 422,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO QUIJARRO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 423,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "CARMEN RIVERO TORREZ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 424,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "ASCENCIÓN DE GUARAYOS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 425,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "URUBICHA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 426,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EL PUENTE"
+                }
+            ],
+            "nombre": "SANTA CRUZ"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 8,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 427,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "TRINIDAD"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 428,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN JAVIER"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 429,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "RIBERALTA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 430,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "GUAYARAMERÍN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 431,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "REYES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 432,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN BORJA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 433,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTA ROSA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 434,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "RURRENABAQUE"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 435,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTA ANA DE YACUMA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 436,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EXALTACIÓN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 437,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN IGNACIO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 438,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "LORETO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 439,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN ANDRÉS"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 440,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN JOAQUÍN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 441,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN RAMÓN"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 442,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO SILES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 443,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "MAGDALENA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 444,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BAURES"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 445,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "HUACARAJE"
+                }
+            ],
+            "nombre": "BENI"
+        },
+        {
+            "idNivelGeografico": 1,
+            "idUbicacionGeografica": 9,
+            "listaUbicacionGeografica": [
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 446,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "COBIJA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 447,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PORVENIR"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 448,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BOLPEBRA (MUKDEN)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 449,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "BELLA FLOR"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 450,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO RICO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 451,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN PEDRO (CONQUISTA)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 452,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "FILADELFIA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 453,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "PUERTO GONZALES MORENO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 454,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SAN LORENZO"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 455,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "EL SENA"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 456,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTA ROSA DEL ABUNÁ"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 457,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "INGAVI"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 458,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "NUEVO MANOA (NUEVA ESPERANZA)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 459,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "VILLA NUEVA (LOMA ALTA)"
+                },
+                {
+                    "idNivelGeografico": 3,
+                    "idUbicacionGeografica": 460,
+                    "listaUbicacionGeografica": null,
+                    "nombre": "SANTOS MERCADO"
+                }
+            ],
+            "nombre": "PANDO"
+        }
+    ],
+    "message": null,
+    "error": null,
+    "responseCode": 100
+}

@@ -17,9 +17,9 @@
                     <td>{{ $sucursal->codigo_sucursal }}</td>
                     <td>
                         <button class="btn btn-icon btn-sm btn-warning btn-circle" title="Editar rol" onclick="editarSucursal({{ json_encode($sucursal) }})"><i class="fa fa-edit"></i></button>
-                        @rol(1,5)
+                        {{-- @rol(1,5) --}}
                         <button class="btn btn-icon btn-sm btn-danger btn-circle" title="Eliminar rol" onclick="eliminarSucursal({{ json_encode($sucursal) }})"><i class="fa fa-trash"></i></button>
-                        @endrol
+                        {{-- @endrol --}}
                     </td>
                 </tr>
             @empty

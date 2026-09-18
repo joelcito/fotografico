@@ -40,10 +40,6 @@ class Movimiento extends Model
         return $this->belongsTo(User::class, 'usuario_creador_id');
     }
 
-    // public function detalle(){
-    //     return $this->belongsTo(Detalle::class);
-    // }
-
     public function cantidaDisponileACiertaFecha($sucursal_id, $servicio_id, $fecha_ini, $fecha_fin){
         $ingresos = Movimiento::where('sucursal_id', $sucursal_id)
                                     ->where('producto_id', $servicio_id)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movimiento;
 use App\Models\Producto;
 use App\Models\Sucursal;
 use App\Utils\Respuesta;
@@ -157,85 +158,85 @@ class ProductoController extends Controller
         return $data;
     }
 
-    // public function guardarStockSucursal(Request $request){
-    //     if($request->ajax()){
+    public function guardarStockSucursal(Request $request){
+        if($request->ajax()){
 
-    //         $request->validate([
-    //             'producto_id' => 'required',
-    //             'sucursal_id' => 'required',
-    //             'f_precio_compra' => 'required',
-    //             'f_precio_venta' => 'required',
-    //             'cantidad_ingreso' => 'required|min:1',
-    //         ]);
+            $request->validate([
+                'producto_id' => 'required',
+                'sucursal_id' => 'required',
+                'f_precio_compra' => 'required',
+                'f_precio_venta' => 'required',
+                'cantidad_ingreso' => 'required|min:1',
+            ]);
 
-    //         $producto_id = $request->input('producto_id');
-    //         $sucursal_id = $request->input('sucursal_id');
-    //         $precio_compra = $request->input('f_precio_compra');
-    //         $precio_venta = $request->input('f_precio_venta');
-    //         $descripcion     = $request->input('descripcion');
-    //         $usuario         = Auth::user();
+            $producto_id = $request->input('producto_id');
+            $sucursal_id = $request->input('sucursal_id');
+            $precio_compra = $request->input('f_precio_compra');
+            $precio_venta = $request->input('f_precio_venta');
+            $descripcion     = $request->input('descripcion');
+            $usuario         = Auth::user();
 
-    //         $cantidad_ingreso = $request->input('cantidad_ingreso');
+            $cantidad_ingreso = $request->input('cantidad_ingreso');
 
-    //         $producto = Producto::find($producto_id);
-    //         $producto->precio_compra = $precio_compra;
-    //         $producto->precio_venta = $precio_venta;
-    //         $producto->save();
+            $producto = Producto::find($producto_id);
+            $producto->precio_compra = $precio_compra;
+            $producto->precio_venta = $precio_venta;
+            $producto->save();
 
-    //         $nuevo              = new Movimiento();
-    //         $nuevo->producto_id = $producto_id;
-    //         $nuevo->sucursal_id = $sucursal_id;
-    //         $nuevo->ingreso     = $cantidad_ingreso;
-    //         $nuevo->salida             = 0;
-    //         $nuevo->usuario_creador_id = $usuario->id;
-    //         $nuevo->fecha              = date('Y-m-d H:i:s');
-    //         $nuevo->descripcion        = $descripcion;
-    //         $nuevo->precio_compra      = $precio_compra;
-    //         $nuevo->precio_venta       = $precio_venta;
-    //         $nuevo->save();
+            $nuevo              = new Movimiento();
+            $nuevo->producto_id = $producto_id;
+            $nuevo->sucursal_id = $sucursal_id;
+            $nuevo->ingreso     = $cantidad_ingreso;
+            $nuevo->salida             = 0;
+            $nuevo->usuario_creador_id = $usuario->id;
+            $nuevo->fecha              = date('Y-m-d H:i:s');
+            $nuevo->descripcion        = $descripcion;
+            $nuevo->precio_compra      = $precio_compra;
+            $nuevo->precio_venta       = $precio_venta;
+            $nuevo->save();
 
-    //         $data = Respuesta::success($producto, "Datos obtenidos correctamente");
+            $data = Respuesta::success($producto, "Datos obtenidos correctamente");
 
-    //     }else{
-    //         $data = Respuesta::error(null, "No existe");
-    //     }
-    //     return $data;
-    // }
+        }else{
+            $data = Respuesta::error(null, "No existe");
+        }
+        return $data;
+    }
 
-    // public function guardarSalidaSucursal(Request $request){
-    //     if($request->ajax()){
+    public function guardarSalidaSucursal(Request $request){
+        if($request->ajax()){
 
-    //         $request->validate([
-    //             'salida_producto_id' => 'required',
-    //             'salida_sucursal_id' => 'required',
-    //             'cantidad_salida' => 'required|min:1',
-    //         ]);
+            $request->validate([
+                'salida_producto_id' => 'required',
+                'salida_sucursal_id' => 'required',
+                'cantidad_salida' => 'required|min:1',
+            ]);
 
-    //         $producto_id = $request->input('salida_producto_id');
-    //         $sucursal_id = $request->input('salida_sucursal_id');
-    //         $descripcion     = $request->input('salida_descripcion');
-    //         $usuario         = Auth::user();
+            $producto_id = $request->input('salida_producto_id');
+            $sucursal_id = $request->input('salida_sucursal_id');
+            $descripcion     = $request->input('salida_descripcion');
+            $usuario         = Auth::user();
 
-    //         $cantidad_salida = $request->input('cantidad_salida');
+            $cantidad_salida = $request->input('cantidad_salida');
 
-    //         $nuevo              = new Movimiento();
-    //         $nuevo->producto_id = $producto_id;
-    //         $nuevo->sucursal_id = $sucursal_id;
+            $nuevo              = new Movimiento();
+            $nuevo->producto_id = $producto_id;
+            $nuevo->sucursal_id = $sucursal_id;
 
-    //         $producto = Producto::find($producto_id);
+            $producto = Producto::find($producto_id);
 
-    //         $nuevo->salida       = $cantidad_salida;
-    //         $nuevo->ingreso             = 0;
-    //         $nuevo->usuario_creador_id = $usuario->id;
-    //         $nuevo->fecha              = date('Y-m-d H:i:s');
-    //         $nuevo->descripcion        = $descripcion;
-    //         $nuevo->save();
+            $nuevo->salida       = $cantidad_salida;
+            $nuevo->ingreso             = 0;
+            $nuevo->usuario_creador_id = $usuario->id;
+            $nuevo->fecha              = date('Y-m-d H:i:s');
+            $nuevo->descripcion        = $descripcion;
+            $nuevo->save();
 
-    //         $data = Respuesta::success($producto, "Datos obtenidos correctamente");
+            $data = Respuesta::success($producto, "Datos obtenidos correctamente");
 
-    //     }else{
-    //         $data = Respuesta::error(null, "No existe");
-    //     }
-    //     return $data;
-    // }
+        }else{
+            $data = Respuesta::error(null, "No existe");
+        }
+        return $data;
+    }
 }

@@ -20,9 +20,9 @@
                                 Opciones
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                @rol(1,5)
+                                {{-- @rol(1,5) --}}
                                 <li><button class="dropdown-item" type="button" onclick="adicionarStockSucursalProducto({{ json_encode($sucursal) }}, {{ $producto }})"><i class="fa fa-calendar-plus"></i> Adicionar Stock</button></li>
-                                @endrol
+                                {{-- @endrol --}}
                                 <li><button class="dropdown-item" type="button" onclick="adicionarSalidaSucursalProducto({{ json_encode($sucursal) }}, {{ $producto }})"><i class="fa fa-calendar-minus"></i> Salida de Stock</button></li>
                             </ul>
                         </div>

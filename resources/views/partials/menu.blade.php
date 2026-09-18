@@ -70,6 +70,25 @@
                             </div>
 
                             <div class="menu-item">
+                                <a class="menu-link {{ Route::currentRouteName() == 'servicio.listado' ? 'active' : '' }}"
+                                    href="{{ route('servicio.listado') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title text-white">Servicios</span>
+                                </a>
+                            </div>
+
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ url('cliente/listado') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title text-white">Cliente</span>
+                                </a>
+                            </div>
+
+                            {{-- <div class="menu-item">
                                 <a class="menu-link" href="{{ url('tiporeceta/listado') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
@@ -96,14 +115,7 @@
                                 </a>
                             </div>
 
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('cliente/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Cliente</span>
-                                </a>
-                            </div>
+
 
                             <div class="menu-item">
                                 <a class="menu-link" href="{{ url('marca/listado') }}">
@@ -157,7 +169,7 @@
                                     </span>
                                     <span class="menu-title text-white">Solicitudes</span>
                                 </a>
-                            </div>
+                            </div> --}}
 
                             {{-- <div class="menu-item">
                                 <a class="menu-link" href="{{ route('solicitudAnulacion.listado') }}">
@@ -274,7 +286,7 @@
                 {{-- @endif --}}
 
 
-                {{-- <div data-kt-menu-trigger="click"
+                <div data-kt-menu-trigger="click"
                     class="menu-item menu-accordion {{ Request::is('pago/*', 'cotizacion/*') ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
@@ -288,6 +300,14 @@
 
                     <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
+                            <a class="menu-link" href="{{ route('caja.listado') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title text-white">Cajas de dia</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
                             <a class="menu-link" href="{{ url('factura/formulario') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
@@ -295,8 +315,7 @@
                                 <span class="menu-title text-white">Nueva venta</span>
                             </a>
                         </div>
-                    </div>
-                    <div class="menu-sub menu-sub-accordion">
+
                         <div class="menu-item">
                             <a class="menu-link" href="{{ url('factura/listado') }}">
                                 <span class="menu-bullet">
@@ -305,9 +324,28 @@
                                 <span class="menu-title text-white">Listado Facturas</span>
                             </a>
                         </div>
+
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ url('pago/listadoDeuda') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title text-white">Cuentas por Cobrar</span>
+                            </a>
+                        </div>
+
+                        <div class="menu-item">
+                            <a class="menu-link {{ Route::currentRouteName() == 'pago.listado' ? 'active' : '' }}"
+                                href="{{ route('pago.listado') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title text-white">Ventas del Dia</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="menu-sub menu-sub-accordion">
+                    {{-- <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
                             <a class="menu-link" href="{{ route('caja.listado') }}">
                                 <span class="menu-bullet">
@@ -353,8 +391,8 @@
                                 <span class="menu-title text-white">Busqueda Prod.</span>
                             </a>
                         </div>
-                    </div>
-                </div> --}}
+                    </div> --}}
+                </div>
                 <!--end:Menu item-->
 
                 {{-- <div data-kt-menu-trigger="click"

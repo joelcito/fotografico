@@ -66,7 +66,7 @@
 
                         <!--begin::Actions-->
                         <div class="d-flex gap-2 gap-lg-3">
-                            {{-- <a class="btn btn-sm fw-bold btn-primary" onclick="modalNuevoRol()"><i class="fa fa-plus"></i>Nuevo Rol</a> --}}
+                            <a class="btn btn-sm fw-bold btn-primary" onclick="modalNuevoRol()"><i class="fa fa-plus"></i>Nuevo Rol</a>
                         </div>
 
                         <!--end::Actions-->

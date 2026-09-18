@@ -66,15 +66,15 @@ class Factura extends Model
         return $this->belongsTo(User::class, 'chofer_id');
     }
 
-    // public function detalles()
-    // {
-    //     return $this->hasMany(Detalle::class);
-    // }
+    public function detalles()
+    {
+        return $this->hasMany(Detalle::class);
+    }
 
-    // public function pagos()
-    // {
-    //     return $this->hasMany(Pago::class, 'factura_id');
-    // }
+    public function pagos()
+    {
+        return $this->hasMany(Pago::class, 'factura_id');
+    }
 
     public function vendedor()
     {

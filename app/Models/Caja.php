@@ -41,17 +41,23 @@ class Caja extends Model
         return $this->belongsTo('App\Models\User', 'usuario_apertura_id');
     }
 
+    public function sucursal()
+    {
+        return $this->belongsTo('App\Models\Sucursal', 'sucursal_id');
+    }
+
     public function usuarioCierre()
     {
         return $this->belongsTo('App\Models\User', 'usuario_cierre_id');
     }
     public function sacaCajaVigente($sucursal_id){
-    // public function sacaCajaVigente(){
-        return Caja::select('cajas.*')
-                    ->join('punto_ventas', 'punto_ventas.id', '=', 'cajas.punto_venta_id')
-                    ->where('cajas.estado', 'Abierta')
-                    ->where('punto_ventas.sucursal_id', $sucursal_id)
-                    // ->where('usuario_id',$usuario_id)
+        // return Caja::select('cajas.*')
+        //             ->where('cajas.estado', 'Abierta')
+        //             ->where('sucursal_id', $sucursal_id)
+        //             ->first();
+
+        return $this->where('cajas.estado', 'Abierta')
+                    ->where('sucursal_id', $sucursal_id)
                     ->first();
     }
 
@@ -67,14 +73,12 @@ class Caja extends Model
         // dd($usuario_id, $admin);
 
         if($admin){
-            return $this->select('cajas.*', 'punto_ventas.sucursal_id')
-                        ->join('punto_ventas', 'punto_ventas.id', '=', 'cajas.punto_venta_id')
+            return $this->select('cajas.*', 'sucursal_id')
                         ->orderBy('cajas.id', 'desc')
                         ->get();
         }else{
-            return $this->select('cajas.*', 'punto_ventas.sucursal_id')
-                        ->join('punto_ventas', 'punto_ventas.id', '=', 'cajas.punto_venta_id')
-                        ->where('punto_ventas.sucursal_id', $sucursal_id)
+            return $this->select('cajas.*', 'sucursal_id')
+                        ->where('sucursal_id', $sucursal_id)
                         ->orderBy('cajas.id', 'desc')
                         // ->where('usuario_apertura_id', $usuario_id)
                         ->get();

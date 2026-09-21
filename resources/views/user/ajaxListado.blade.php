@@ -36,6 +36,7 @@
                     <td>{{ $usuario->email }}</td>
                     <td>{{ $usuario->celular }}</td>
                     <td>
+                        @rol(1)
                         <button class="btn btn-icon btn-sm btn-info btn-circle" title="Restablecer Contraseña"
                             onclick="abrirModalResetPassword({{ $usuario->id }})">
                             <i class="fa fa-key"></i>
@@ -44,6 +45,7 @@
                             onclick="editarUsuario({{ json_encode($usuario) }})"><i class="fa fa-edit"></i></button>
                         <button class="btn btn-icon btn-sm btn-danger btn-circle" title="Eliminar usuario"
                             onclick="eliminarUsuario({{ json_encode($usuario) }})"><i class="fa fa-trash"></i></button>
+                        @endrol
                     </td>
                 </tr>
             @empty

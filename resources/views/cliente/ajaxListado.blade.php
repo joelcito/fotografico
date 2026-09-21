@@ -22,10 +22,10 @@
                     <td>{{ $cliente->direccion }}</td>
                     <td>{{ $cliente->numero_celular }}</td>
                     <td>
+                        @rol(1)
                         <button class="btn btn-icon btn-sm btn-warning btn-circle" title="Editar Cliente" onclick="editarCliente({{ json_encode($cliente) }})"><i class="fa fa-edit"></i></button>
-                        {{-- @rol(1,5,2) --}}
                         <button class="btn btn-icon btn-sm btn-danger btn-circle" title="Eliminar Cliente" onclick="eliminarCliente({{ json_encode($cliente) }})"><i class="fa fa-trash"></i></button>
-                        {{-- @endrol --}}
+                        @endrol
                     </td>
                 </tr>
             @empty

@@ -45,11 +45,11 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                                 <li><button class="dropdown-item" type="button" onclick="adicionarStockSucursal({{ json_encode($prod) }})"><i class="fa fa-calendar-plus"></i> Stock-Sucursal</button></li>
-                                {{-- @rol(1,5) --}}
-                                <li><button class="dropdown-item" type="button" onclick="transferenciaSucursal({{ json_encode($prod) }})"><i class="fa fa-arrow-right"></i> Transferencia</button></li>
+                                @rol(1)
+                                {{-- <li><button class="dropdown-item" type="button" onclick="transferenciaSucursal({{ json_encode($prod) }})"><i class="fa fa-arrow-right"></i> Transferencia</button></li> --}}
                                 <li><button class="dropdown-item" type="button" onclick="editarProducto({{ json_encode($prod) }})"><i class="fa fa-edit"></i> Editar</button></li>
                                 <li><button class="dropdown-item" type="button" onclick="eliminarProducto({{ json_encode($prod) }})"><i class="fa fa-trash"></i> Eliminar</button></li>
-                                {{-- @endrol --}}
+                                @endrol
                             </ul>
                         </div>
                     </td>

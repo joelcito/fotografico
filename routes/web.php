@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\SucursalController;
@@ -152,6 +153,47 @@ Route::middleware('auth')->group(function () {
         Route::post('/guardar', [AgendaController::class, 'guardar'])->name('agenda.guardar');
         Route::post('/eliminar', [AgendaController::class, 'eliminar'])->name('agenda.eliminar');
         Route::post('/mover', [AgendaController::class, 'mover'])->name('agenda.mover');
+    });
+
+    Route::prefix('/reporte')->group(function () {
+
+        Route::get('/listado', [ReporteController::class, 'listado'])->name('reporte.listado');
+
+        // ==========================
+        // VENTAS
+        // ==========================
+        Route::get('/ventas/pdf', [ReporteController::class, 'ventasPdf'])->name('reporte.ventas.pdf');
+        Route::get('/ventas/excel', [ReporteController::class, 'ventasExcel'])->name('reporte.ventas.excel');
+
+        // ==========================
+        // CUENTAS POR COBRAR
+        // ==========================
+        Route::get('/cuentas-cobrar/pdf', [ReporteController::class, 'cuentasCobrarPdf'])->name('reporte.cuentasCobrar.pdf');
+        Route::get('/cuentas-cobrar/excel', [ReporteController::class, 'cuentasCobrarExcel'])->name('reporte.cuentasCobrar.excel');
+
+        // ==========================
+        // INVENTARIO
+        // ==========================
+        Route::get('/inventario/pdf', [ReporteController::class, 'inventarioPdf'])->name('reporte.inventario.pdf');
+        Route::get('/inventario/excel', [ReporteController::class, 'inventarioExcel'])->name('reporte.inventario.excel');
+
+        // ==========================
+        // KARDEX
+        // ==========================
+        Route::get('/kardex/pdf', [ReporteController::class, 'kardexPdf'])->name('reporte.kardex.pdf');
+        Route::get('/kardex/excel', [ReporteController::class, 'kardexExcel'])->name('reporte.kardex.excel');
+
+        // ==========================
+        // FLUJO EFECTIVO
+        // ==========================
+        Route::get('/flujo-efectivo/pdf', [ReporteController::class, 'flujoEfectivoPdf'])->name('reporte.flujoEfectivo.pdf');
+        Route::get('/flujo-efectivo/excel', [ReporteController::class, 'flujoEfectivoExcel'])->name('reporte.flujoEfectivo.excel');
+
+        // ==========================
+        // AGENDA
+        // ==========================
+        Route::get('/agenda/pdf', [ReporteController::class, 'agendaPdf'])->name('reporte.agenda.pdf');
+        Route::get('/agenda/excel', [ReporteController::class, 'agendaExcel'])->name('reporte.agenda.excel');
     });
 
 });

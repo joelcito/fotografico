@@ -14,10 +14,10 @@
                     <td>{{ $ser->nombre }}</td>
                     <td>{{ $ser->precio_venta }}</td>
                     <td>
-                        {{-- @rol(5,1) --}}
+                        @rol(1)
                             <button class="btn btn-icon btn-sm btn-warning btn-circle" title="Editar Servicio" onclick="editarServicio({{ json_encode($ser) }})"><i class="fa fa-edit"></i></button>
                             <button class="btn btn-icon btn-sm btn-danger btn-circle" title="Eliminar Servicio" onclick="eliminarServicio({{ json_encode($ser) }})"><i class="fa fa-trash"></i></button>
-                        {{-- @endrol --}}
+                        @endrol
                     </td>
                 </tr>
             @empty

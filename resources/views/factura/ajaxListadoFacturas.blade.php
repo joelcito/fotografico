@@ -51,10 +51,10 @@
                         <a href="{{ url('factura/imprimeReciboRollo', [$fac->id]) }}" target="_blank"
                             class="btn btn-primary btn-sm btn-icon tamanio_boton" title="Imprime Rollo"><i
                                 class="fa fa-file-pdf"></i></a>
-                        {{-- @rol(1,5) --}}
+                        @rol(1)
                         <button class="btn btn-danger btn-sm btn-icon tamanio_boton"
                             onclick="anularRecibo('{{ $fac->numero_recibo }}', '{{ $fac->id }}')"><i class="fa fa-trash"></i></button>
-                        {{-- @endrol --}}
+                        @endrol
                     </td>
                 </tr>
             @empty

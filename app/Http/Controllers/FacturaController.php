@@ -42,7 +42,7 @@ class FacturaController extends Controller
 
         // PARA VERIFICAR LA CAJA
         $caja = new Caja();
-        $cajaAbierta = $caja->sacaCajaVigente($usuario->id);
+        $cajaAbierta = $caja->sacaCajaVigente($sucursal->id);
 
         return view('factura.formulario')->with(compact('servicios', 'cajaAbierta', 'usuario'));
     }

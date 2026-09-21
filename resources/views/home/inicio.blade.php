@@ -13,203 +13,504 @@
                     style="background-position: 100% 50%; background-image:url('assets/media/stock/900x600/42.png')">
                     <div class="mb-10">
                         <div class="fs-2hx fw-bold text-gray-800 text-center mb-13">
-                            <span class="me-2">Sistema de Control de Studio Fotografico
-                                <br />
+                            <span class="me-2">
+                                Sistema de Control de Studio Fotográfico
+                                <br>
                                 <span class="position-relative d-inline-block text-danger">
-                                    <span
-                                        class="position-absolute opacity-15 bottom-0 start-0 border-4 border-danger border-bottom w-100"></span>
-                                </span></span> :)
+                                    Panel de Control
+                                </span>
+                            </span>
                         </div>
                     </div>
 
-                    <!--begin::Content-->
-                    <div id="kt_app_content" class="app-content flex-column-fluid">
-                        <!--begin::Content container-->
-                        <div id="kt_app_content_container" class="app-container container-fluid">
-                            <!--begin::Row-->
-                            <div class="row">
-                                <!--begin::Col-->
-                                <div class="col-md-3">
-                                    <!--begin::Card widget 20-->
-                                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end"
-                                        style="background-color: #F1416C;background-image:url('assets/media/patterns/vector-1.png');">
-                                        <!--begin::Header-->
-                                        <div class="card-header pt-5">
-                                            <!--begin::Title-->
-                                            <div class="card-title d-flex flex-column">
-                                                <!--begin::Amount-->
-                                                <span class="fs-2hx fw-bold text-white me-2 lh-1 ls-n2">{{ $cantidadUsuario }}</span>
-                                                <!--end::Amount-->
-                                                <!--begin::Subtitle-->
-                                                <span class="text-white opacity-75 pt-1 fw-semibold fs-6">Usuarios Registrados</span>
-                                                <!--end::Subtitle-->
-                                            </div>
-                                            <!--end::Title-->
-                                        </div>
-                                        <!--end::Header-->
-                                        <!--begin::Card body-->
-                                        <div class="card-body d-flex align-items-end pt-0">
-                                            <!--begin::Progress-->
-                                            <div class="d-flex align-items-center flex-column mt-3 w-100">
-                                                <div
-                                                    class="d-flex justify-content-between fw-bold fs-6 text-white opacity-75 w-100 mt-auto mb-2">
-                                                    {{-- <span>43 Pending</span>
-                                                <span>72%</span> --}}
-                                                </div>
-                                                <div class="h-8px mx-3 w-100 bg-white bg-opacity-50 rounded">
-                                                    <div class="bg-white rounded h-8px" role="progressbar"
-                                                        style="width: 72%;" aria-valuenow="50" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <!--end::Progress-->
-                                        </div>
-                                        <!--end::Card body-->
-                                    </div>
-                                    <!--end::Card widget 20-->
-                                </div>
-                                <!--end::Col-->
-
-                                <!--begin::Col-->
-                                <div class="col-md-3">
-                                    <!--begin::Card widget 20-->
-                                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end"
-                                        style="background-color: #4d41f1;background-image:url('assets/media/patterns/vector-1.png');">
-                                        <!--begin::Header-->
-                                        <div class="card-header pt-5">
-                                            <!--begin::Title-->
-                                            <div class="card-title d-flex flex-column">
-                                                <!--begin::Amount-->
-                                                <span class="fs-2hx fw-bold text-white me-2 lh-1 ls-n2">0</span>
-                                                <!--end::Amount-->
-                                                <!--begin::Subtitle-->
-                                                <span class="text-white opacity-75 pt-1 fw-semibold fs-6">Registros</span>
-                                                <!--end::Subtitle-->
-                                            </div>
-                                            <!--end::Title-->
-                                        </div>
-                                        <!--end::Header-->
-                                        <!--begin::Card body-->
-                                        <div class="card-body d-flex align-items-end pt-0">
-                                            <!--begin::Progress-->
-                                            <div class="d-flex align-items-center flex-column mt-3 w-100">
-                                                <div
-                                                    class="d-flex justify-content-between fw-bold fs-6 text-white opacity-75 w-100 mt-auto mb-2">
-                                                    {{-- <span>43 Pending</span>
-                                                <span>72%</span> --}}
-                                                </div>
-                                                <div class="h-8px mx-3 w-100 bg-white bg-opacity-50 rounded">
-                                                    <div class="bg-white rounded h-8px" role="progressbar"
-                                                        style="width: 41%;" aria-valuenow="50" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <!--end::Progress-->
-                                        </div>
-                                        <!--end::Card body-->
-                                    </div>
-                                    <!--end::Card widget 20-->
-                                </div>
-                                <!--end::Col-->
-
-                                <!--begin::Col-->
-                                <div class="col-md-3">
-                                    <!--begin::Card widget 20-->
-                                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end"
-                                        style="background-color: #f18241;background-image:url('assets/media/patterns/vector-1.png');">
-                                        <!--begin::Header-->
-                                        <div class="card-header pt-5">
-                                            <!--begin::Title-->
-                                            <div class="card-title d-flex flex-column">
-                                                <!--begin::Amount-->
-                                                <span class="fs-2hx fw-bold text-white me-2 lh-1 ls-n2">0</span>
-                                                <!--end::Amount-->
-                                                <!--begin::Subtitle-->
-                                                <span class="text-white opacity-75 pt-1 fw-semibold fs-6">Registros</span>
-                                                <!--end::Subtitle-->
-                                            </div>
-                                            <!--end::Title-->
-                                        </div>
-                                        <!--end::Header-->
-                                        <!--begin::Card body-->
-                                        <div class="card-body d-flex align-items-end pt-0">
-                                            <!--begin::Progress-->
-                                            <div class="d-flex align-items-center flex-column mt-3 w-100">
-                                                <div
-                                                    class="d-flex justify-content-between fw-bold fs-6 text-white opacity-75 w-100 mt-auto mb-2">
-                                                    {{-- <span>43 Pending</span>
-                                                <span>72%</span> --}}
-                                                </div>
-                                                <div class="h-8px mx-3 w-100 bg-white bg-opacity-50 rounded">
-                                                    <div class="bg-white rounded h-8px" role="progressbar"
-                                                        style="width: 20%;" aria-valuenow="50" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <!--end::Progress-->
-                                        </div>
-                                        <!--end::Card body-->
-                                    </div>
-                                    <!--end::Card widget 20-->
-                                </div>
-                                <!--end::Col-->
+                    <div class="row g-5 mb-5">
 
 
-                                <!--begin::Col-->
-                                <div class="col-md-3">
-                                    <!--begin::Card widget 20-->
-                                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end"
-                                        style="background-color: #3e7213;background-image:url('assets/media/patterns/vector-1.png');">
-                                        <!--begin::Header-->
-                                        <div class="card-header pt-5">
-                                            <!--begin::Title-->
-                                            <div class="card-title d-flex flex-column">
-                                                <!--begin::Amount-->
-                                                <span class="fs-2hx fw-bold text-white me-2 lh-1 ls-n2">0</span>
-                                                <!--end::Amount-->
-                                                <!--begin::Subtitle-->
-                                                <span class="text-white opacity-75 pt-1 fw-semibold fs-6">Registros</span>
-                                                <!--end::Subtitle-->
+                        {{-- ====================================================== --}}
+                        {{-- VENTAS DE HOY --}}
+                        {{-- ====================================================== --}}
+
+                        <div class="col-xl-3 col-md-6">
+
+                            <div class="card card-flush h-100" style="background-color:#009ef7;">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-between">
+
+                                        <div>
+
+                                            <span class="fs-2hx fw-bold text-white">
+                                                Bs {{ number_format($totalVentasHoy, 2) }}
+                                            </span>
+
+                                            <div class="text-white opacity-75 fw-semibold">
+                                                Ventas de hoy
                                             </div>
-                                            <!--end::Title-->
+
+                                            <small class="text-white opacity-75">
+                                                {{ $cantidadVentasHoy }} ventas registradas
+                                            </small>
+
                                         </div>
-                                        <!--begin::Card body-->
-                                        <div class="card-body d-flex align-items-end pt-0">
-                                            <!--begin::Progress-->
-                                            <div class="d-flex align-items-center flex-column mt-3 w-100">
-                                                <div
-                                                    class="d-flex justify-content-between fw-bold fs-6 text-white opacity-75 w-100 mt-auto mb-2">
-                                                    {{-- <span>43 Pending</span>
-                                                <span>72%</span> --}}
-                                                </div>
-                                                <div class="h-8px mx-3 w-100 bg-white bg-opacity-50 rounded">
-                                                    <div class="bg-white rounded h-8px" role="progressbar"
-                                                        style="width: 80%;" aria-valuenow="50" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <!--end::Progress-->
-                                        </div>
-                                        <!--end::Card body-->
+
+                                        <i class="fas fa-shopping-cart fa-3x text-white opacity-50"></i>
+
                                     </div>
-                                    <!--end::Card widget 20-->
+
                                 </div>
-                                <!--end::Col-->
+
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card card-bordered">
-                                        <div class="card-body">
-                                            <div id="kt_apexcharts_1" style="height: 350px;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
-                        <!--end::Content container-->
+
+
+                        {{-- ====================================================== --}}
+                        {{-- INGRESOS --}}
+                        {{-- ====================================================== --}}
+
+                        <div class="col-xl-3 col-md-6">
+
+                            <div class="card card-flush h-100" style="background-color:#50cd89;">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-between">
+
+                                        <div>
+
+                                            <span class="fs-2hx fw-bold text-white">
+
+                                                Bs {{ number_format($ingresosHoy, 2) }}
+
+                                            </span>
+
+                                            <div class="text-white opacity-75 fw-semibold">
+
+                                                Ingresos de hoy
+
+                                            </div>
+
+                                        </div>
+
+                                        <i class="fas fa-arrow-circle-down fa-3x text-white opacity-50"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- ====================================================== --}}
+                        {{-- SALIDAS --}}
+                        {{-- ====================================================== --}}
+
+                        <div class="col-xl-3 col-md-6">
+
+                            <div class="card card-flush h-100" style="background-color:#f1416c;">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-between">
+
+                                        <div>
+
+                                            <span class="fs-2hx fw-bold text-white">
+
+                                                Bs {{ number_format($salidasHoy, 2) }}
+
+                                            </span>
+
+                                            <div class="text-white opacity-75 fw-semibold">
+
+                                                Salidas de hoy
+
+                                            </div>
+
+                                        </div>
+
+                                        <i class="fas fa-arrow-circle-up fa-3x text-white opacity-50"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- ====================================================== --}}
+                        {{-- SALDO --}}
+                        {{-- ====================================================== --}}
+
+                        <div class="col-xl-3 col-md-6">
+
+                            <div class="card card-flush h-100" style="background-color:#7239ea;">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-between">
+
+                                        <div>
+
+                                            <span class="fs-2hx fw-bold text-white">
+
+                                                Bs {{ number_format($saldoHoy, 2) }}
+
+                                            </span>
+
+                                            <div class="text-white opacity-75 fw-semibold">
+
+                                                Saldo de caja
+
+                                            </div>
+
+                                            <small class="text-white opacity-75">
+
+                                                Apertura:
+                                                Bs {{ number_format($aperturaHoy, 2) }}
+
+                                            </small>
+
+                                        </div>
+
+                                        <i class="fas fa-wallet fa-3x text-white opacity-50"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
-                    <!--end::Content-->
+
+                    <div class="row g-5 mb-10">
+
+                        {{-- CUENTAS POR COBRAR --}}
+
+                        <div class="col-xl-4 col-md-6">
+
+                            <div class="card card-flush h-100">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="symbol symbol-60px me-5">
+
+                                            <span class="symbol-label bg-light-warning">
+
+                                                <i class="fas fa-hand-holding-usd fs-2x text-warning"></i>
+
+                                            </span>
+
+                                        </div>
+
+                                        <div>
+
+                                            <span class="fs-2 fw-bold">
+
+                                                Bs {{ number_format($totalPorCobrar, 2) }}
+
+                                            </span>
+
+                                            <div class="text-muted">
+
+                                                Cuentas por cobrar
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- USUARIOS --}}
+
+                        <div class="col-xl-4 col-md-6">
+
+                            <div class="card card-flush h-100">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="symbol symbol-60px me-5">
+
+                                            <span class="symbol-label bg-light-primary">
+
+                                                <i class="fas fa-users fs-2x text-primary"></i>
+
+                                            </span>
+
+                                        </div>
+
+                                        <div>
+
+                                            <span class="fs-2 fw-bold">
+
+                                                {{ $cantidadUsuario }}
+
+                                            </span>
+
+                                            <div class="text-muted">
+
+                                                Usuarios registrados
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- STOCK BAJO --}}
+
+                        <div class="col-xl-4 col-md-6">
+
+                            <div class="card card-flush h-100">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="symbol symbol-60px me-5">
+
+                                            <span class="symbol-label bg-light-danger">
+
+                                                <i class="fas fa-box-open fs-2x text-danger"></i>
+
+                                            </span>
+
+                                        </div>
+
+                                        <div>
+
+                                            <span class="fs-2 fw-bold">
+
+                                                {{ $stockQuery->count() }}
+
+                                            </span>
+
+                                            <div class="text-muted">
+
+                                                Productos con stock bajo
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-5 mb-10">
+
+
+                        {{-- FORMAS DE PAGO --}}
+
+                        <div class="col-xl-6">
+
+                            <div class="card card-flush h-100">
+
+                                <div class="card-header">
+
+                                    <div class="card-title">
+
+                                        <h3 class="fw-bold">
+                                            Formas de pago del mes
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div id="grafico_formas_pago" style="height: 320px;">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- ESTADO DE VENTAS --}}
+
+                        <div class="col-xl-6">
+
+                            <div class="card card-flush h-100">
+
+                                <div class="card-header">
+
+                                    <div class="card-title">
+
+                                        <h3 class="fw-bold">
+                                            Estado de ventas del mes
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div id="grafico_estado_ventas" style="height: 320px;">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card card-flush mb-10">
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+
+                                <h3 class="fw-bold">
+                                    Productos con stock bajo
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <div class="table-responsive">
+
+                                <table class="table table-row-bordered align-middle">
+
+                                    <thead>
+
+                                        <tr class="fw-bold text-muted">
+
+                                            <th>
+                                                Código
+                                            </th>
+
+                                            <th>
+                                                Producto
+                                            </th>
+
+                                            <th class="text-center">
+                                                Stock actual
+                                            </th>
+
+                                            <th class="text-center">
+                                                Stock mínimo
+                                            </th>
+
+                                            <th class="text-center">
+                                                Estado
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+
+                                    <tbody>
+
+                                        @forelse($stockQuery as $producto)
+
+                                        <tr>
+
+                                            <td>
+                                                {{ $producto->codigo }}
+                                            </td>
+
+                                            <td class="fw-bold">
+                                                {{ $producto->nombre }}
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                {{ number_format($producto->stock, 2) }}
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                {{ number_format($producto->minimo_stock, 2) }}
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                @if($producto->stock <= 0) <span class="badge badge-light-danger">
+                                                    SIN STOCK
+                                                    </span>
+
+                                                    @else
+
+                                                    <span class="badge badge-light-warning">
+                                                        STOCK BAJO
+                                                    </span>
+
+                                                    @endif
+
+                                            </td>
+
+                                        </tr>
+
+                                        @empty
+
+                                        <tr>
+
+                                            <td colspan="5" class="text-center text-muted py-10">
+
+                                                No existen productos con stock bajo.
+
+                                            </td>
+
+                                        </tr>
+
+                                        @endforelse
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -218,162 +519,204 @@
 @section('js')
     {{-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> --}}
     <script>
-        $(document).ready(function() {
-            // // initChartsWidget4();
+        $(document).ready(function () {
 
-            // google.charts.load('current', {
-            //     packages: ['corechart']
-            // });
-            // google.charts.setOnLoadCallback(dibujarGraficos);
+        let element = document.getElementById('kt_apexcharts_1');
 
-            // $(window).resize(function() {
-            //     // dibujarGraficos();
-            // });
+        if (element) {
 
+            let options = {
 
-            var element = document.getElementById('kt_apexcharts_1');
+                series: [
+                    {
+                        name: 'Ventas',
+                        data: @json($ventasMensuales)
+                    },
+                    {
+                        name: 'Ingresos',
+                        data: @json($ingresosMensuales)
+                    },
+                    {
+                        name: 'Salidas',
+                        data: @json($salidasMensuales)
+                    }
+                ],
 
-            var height = parseInt(KTUtil.css(element, 'height'));
-            var labelColor = '#ff8712';
-            var borderColor = '#ab1542';
-            var baseColor = '#ff6384';
-            var secondaryColor = '#36a2eb';
-
-            if (!element) {
-                return;
-            }
-
-            var options = {
-                series: @json($series),
                 chart: {
-                    fontFamily: 'inherit',
                     type: 'bar',
-                    height: height,
+                    height: 350,
                     toolbar: {
                         show: false
                     }
                 },
+
                 plotOptions: {
                     bar: {
                         horizontal: false,
-                        columnWidth: ['30%'],
-                        endingShape: 'rounded'
-                    },
+                        columnWidth: '55%',
+                        borderRadius: 4
+                    }
                 },
-                legend: {
-                    show: false
-                },
+
                 dataLabels: {
                     enabled: false
                 },
-                stroke: {
-                    show: true,
-                    width: 2,
-                    colors: ['transparent']
-                },
+
                 xaxis: {
-                    categories: ['Ene','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
-                    axisBorder: {
-                        show: false,
-                    },
-                    axisTicks: {
-                        show: false
-                    },
-                    labels: {
-                        style: {
-                            colors: labelColor,
-                            fontSize: '12px'
-                        }
-                    }
+                    categories: @json($meses)
                 },
+
                 yaxis: {
                     labels: {
-                        style: {
-                            colors: labelColor,
-                            fontSize: '12px'
+                        formatter: function (value) {
+
+                            return 'Bs ' +
+                                Number(value)
+                                    .toLocaleString(
+                                        'es-BO',
+                                        {
+                                            minimumFractionDigits: 0,
+                                            maximumFractionDigits: 0
+                                        }
+                                    );
                         }
                     }
                 },
-                fill: {
-                    opacity: 1
-                },
-                states: {
-                    normal: {
-                        filter: {
-                            type: 'none',
-                            value: 0
-                        }
-                    },
-                    hover: {
-                        filter: {
-                            type: 'none',
-                            value: 0
-                        }
-                    },
-                    active: {
-                        allowMultipleDataPointsSelection: false,
-                        filter: {
-                            type: 'none',
-                            value: 0
-                        }
-                    }
-                },
+
                 tooltip: {
-                    style: {
-                        fontSize: '12px'
-                    },
+
                     y: {
-                        formatter: function (val) {
-                            return val + ' Bs'
+
+                        formatter: function (value) {
+
+                            return 'Bs ' +
+                                Number(value)
+                                    .toLocaleString(
+                                        'es-BO',
+                                        {
+                                            minimumFractionDigits: 2,
+                                            maximumFractionDigits: 2
+                                        }
+                                    );
                         }
                     }
                 },
-                colors: [baseColor, secondaryColor],
-                grid: {
-                    borderColor: borderColor,
-                    strokeDashArray: 4,
-                    yaxis: {
-                        lines: {
-                            show: true
-                        }
-                    }
+
+                legend: {
+                    position: 'top'
                 }
+
             };
 
-            var chart = new ApexCharts(element, options);
+
+            let chart =
+                new ApexCharts(
+                    element,
+                    options
+                );
+
             chart.render();
+        }
+
+        // ================================================================
+        // FORMAS DE PAGO
+        // ================================================================
+
+        let elementoPago =
+            document.getElementById(
+                'grafico_formas_pago'
+            );
+
+        if (elementoPago) {
+
+            let opcionesPago = {
+
+                series: @json($formasPagoSeries),
+
+                labels: @json($formasPagoLabels),
+
+                chart: {
+                    type: 'donut',
+                    height: 320
+                },
+
+                legend: {
+                    position: 'bottom'
+                },
+
+                tooltip: {
+
+                    y: {
+
+                        formatter: function (value) {
+
+                            return 'Bs ' +
+                                Number(value)
+                                    .toLocaleString(
+                                        'es-BO',
+                                        {
+                                            minimumFractionDigits: 2
+                                        }
+                                    );
+                        }
+                    }
+                },
+
+                noData: {
+                    text: 'Sin movimientos'
+                }
+
+            };
 
 
-        });
+            new ApexCharts(
+                elementoPago,
+                opcionesPago
+            ).render();
+        }
 
-        // var initChartsWidget4 = function() {
-        // function initChartsWidget4() {
 
-        //     var element = document.getElementById("kt_charts_widget_2_chart");
 
-        //     if (!element) {
-        //         return;
-        //     }
+        // ================================================================
+        // ESTADO DE VENTAS
+        // ================================================================
 
-        //     var chart = {
-        //         self: null,
-        //         rendered: false
-        //     };
+        let elementoEstado =
+            document.getElementById(
+                'grafico_estado_ventas'
+            );
 
-        //     // Init chart
-        //     initChart();
+        if (elementoEstado) {
 
-        //     // Update chart on theme mode change
-        //     KTThemeMode.on("kt.thememode.change", function() {
-        //         if (chart.rendered) {
-        //             chart.self.destroy();
-        //         }
+            let opcionesEstado = {
 
-        //         initChart();
-        //     });
+                series: @json($estadoVentasSeries),
 
-        // }
+                labels: @json($estadoVentasLabels),
 
-        // let chartLlamas1, chartLlamas2, chartllamas3;
+                chart: {
+                    type: 'donut',
+                    height: 320
+                },
+
+                legend: {
+                    position: 'bottom'
+                },
+
+                noData: {
+                    text: 'Sin ventas'
+                }
+
+            };
+
+
+            new ApexCharts(
+                elementoEstado,
+                opcionesEstado
+            ).render();
+        }
+
+    });
+
     </script>
 @endsection

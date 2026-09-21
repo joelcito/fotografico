@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\CajaController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\HomeController;
@@ -26,6 +28,10 @@ Route::middleware('auth')->group(function () {
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // ROL : 1 => ADMINISTRADOR
+    // ROL : 2 => CAJA Y VENTAS
+    // ROL : 3 => VENTAS
 
     Route::get('/home', [HomeController::class, 'index']);
 
@@ -102,8 +108,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/listado', [CajaController::class, 'listado'])->name('caja.listado');
         Route::post('/ajaxListado', [CajaController::class, 'ajaxListado']);
         Route::post('/guardarAperturaCaja', [CajaController::class, 'guardarAperturaCaja']);
+
         Route::post('/guardarCerrarCaja', [CajaController::class, 'guardarCerrarCaja']);
-        Route::post('/habilitarCaja', [CajaController::class, 'habilitarCaja'])->name('caja.habilitarCaja');
+        // Route::post('/habilitarCaja', [CajaController::class, 'habilitarCaja'])->name('caja.habilitarCaja');
+        Route::post('/formularioEdicionCaja', [CajaController::class, 'formularioEdicionCaja']);
+        Route::post('/verCaja', [CajaController::class, 'verCaja']);
     });
 
     // CLIENTE
@@ -127,6 +136,24 @@ Route::middleware('auth')->group(function () {
         Route::post('/eliminarPago', [PagoController::class, 'eliminarPago'])->name('pago.eliminarPago');
         Route::get('/comprobantePago/{pago_id}', [PagoController::class, 'comprobantePago'])->name('pago.comprobantePago');
     });
+
+    // CATEGORIA
+    Route::prefix('/categoria')->group(function () {
+        Route::get('/listado', [CategoriaController::class, 'listado'])->name('categoria.listado');
+        Route::post('/ajaxListado', [CategoriaController::class, 'ajaxListado'])->name('categoria.ajaxListado');
+        Route::post('/guardar', [CategoriaController::class, 'guardar'])->name('categoria.guardar');
+        Route::post('/eliminar', [CategoriaController::class, 'eliminar'])->name('categoria.eliminar');
+    });
+
+    // AGENDA
+    Route::prefix('/agenda')->group(function () {
+        Route::get('/listado', [AgendaController::class, 'listado'])->name('agenda.listado');
+        Route::get('/eventos', [AgendaController::class, 'eventos'])->name('agenda.eventos');
+        Route::post('/guardar', [AgendaController::class, 'guardar'])->name('agenda.guardar');
+        Route::post('/eliminar', [AgendaController::class, 'eliminar'])->name('agenda.eliminar');
+        Route::post('/mover', [AgendaController::class, 'mover'])->name('agenda.mover');
+    });
+
 });
 
 require __DIR__.'/auth.php';

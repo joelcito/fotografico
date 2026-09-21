@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Caja;
 use App\Models\Pago;
+use App\Models\User;
 use App\Utils\Respuesta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,9 @@ class CajaController extends Controller
         $caja = new Caja();
         $cajaAbierta = $caja->sacaCajaVigente($usuario->id);
 
-        return view('caja.listado')->with(compact('cajaAbierta', 'usuario'));
+        $usuarios = User::all();
+
+        return view('caja.listado')->with(compact('cajaAbierta', 'usuario', 'usuarios'));
     }
 
     public function ajaxListado(Request $request)
@@ -117,61 +120,75 @@ class CajaController extends Controller
 
             if ($cajaAperturada) {
 
-                $totalEfectivo = Pago::where('estado', 'INGRESO')
-                    ->where('tipo_pago', 'EFECTIVO')
+                // TRONCALES
+                $pagosVenta = Pago::where('apertura_caja', 'No')
                     ->where('caja_id', $cajaAperturada->id)
-                    ->where('apertura_caja', 'No')
+                    ->where('estado', 'INGRESO')
+                    ->whereNotNull('factura_id')
+                    ->get();
+
+                $pagosOtros = Pago::where('apertura_caja', 'No')
+                    ->where('caja_id', $cajaAperturada->id)
+                    ->where('estado', 'INGRESO')
+                    ->whereNull('factura_id')
+                    ->get();
+
+                // TOTAL APERTURA CAJA
+                $totalAperturaCaja = Pago::where('apertura_caja', 'Si')
+                    ->where('caja_id', $cajaAperturada->id)
+                    ->where('estado', 'INGRESO')
                     ->sum('monto');
 
-                $totalQr = Pago::where('estado', 'INGRESO')
-                    ->where('tipo_pago', 'QR')
+                // SALIDA
+                $totalSalidas = Pago::where('apertura_caja', 'No')
                     ->where('caja_id', $cajaAperturada->id)
-                    ->where('apertura_caja', 'No')
+                    ->where('estado', 'SALIDA')
                     ->sum('monto');
 
-                $totalTramsferencia = Pago::where('estado', 'INGRESO')
-                    ->where('tipo_pago', 'TRANSFERENCIA')
-                    ->where('caja_id', $cajaAperturada->id)
-                    ->where('apertura_caja', 'No')
+                // TOTAL RECAUDADO
+                $totalRecaudado = Pago::where('caja_id', $cajaAperturada->id)
+                    ->where('estado', 'INGRESO')
                     ->sum('monto');
 
-
-                $otrasSalidas = Pago::where('estado', 'SALIDA')
-                    ->where('tipo_pago', 'EFECTIVO')
-                    ->where('caja_id', $cajaAperturada->id)
-                    ->where('apertura_caja', 'No')
-                    ->sum('monto');
-
-
-
-                $montoTotal     = $totalEfectivo + $totalQr + $totalTramsferencia;
-                $montoAlContado = $montoTotal - $totalQr - $totalTramsferencia;
-                $saldo          = $monto_cierre - ($montoAlContado - $otrasSalidas) - $cajaAperturada->monto_apertura;
+                $totalRecaudado = $totalRecaudado - $totalSalidas;
 
                 // dd(
-                //    $totalEfectivo,
-                //    $totalQr,
-                //    $totalTramsferencia,
-                //    $otrasSalidas,
-                //     $montoTotal,
-                //     $montoAlContado,
-                //     $saldo,
-                //     $monto_cierre,
-                //     $cajaAperturada->monto_apertura
+                //     $pagosVenta,
+                //     $pagosOtros,
+                //     $totalAperturaCaja,
+                //     $totalSalidas,
+                //     $totalRecaudado
                 // );
 
-                $cajaAperturada->usuario_modificador_id = $usuario->id;
-                $cajaAperturada->fecha_cierre           = date('Y-m-d H:i:s');
+                // INGRESOS DE VENTAS
+                $totalIngresosVenta              = $pagosVenta->sum('monto');
+                $totalIngresosVentaEfectivo      = $pagosVenta->where('tipo_pago', 'EFECTIVO')->sum('monto');
+                $totalIngresosVentaTramsferencia = $pagosVenta->where('tipo_pago', 'TRANSFERENCIA')->sum('monto');
+                $totalIngresosVentaEQr           = $pagosVenta->where('tipo_pago', 'QR')->sum('monto');
+
+                // OTROS INGRESOS
+                $totalOtrosIngresos                   = $pagosOtros->sum('monto');
+                $totalOtrosIngresosVentaEfectivo      = $pagosOtros->where('tipo_pago', 'EFECTIVO')->sum('monto');
+                $totalOtrosIngresosVentaTramsferencia = $pagosOtros->where('tipo_pago', 'TRANSFERENCIA')->sum('monto');
+                $totalOtrosIngresosVentaEQr           = $pagosOtros->where('tipo_pago', 'QR')->sum('monto');
+
+                $cajaAperturada->fecha_cierre           = $fecha_registro;
+                $cajaAperturada->usuario_cierre_id      = $usuario->id;
                 $cajaAperturada->monto_cierre           = $monto_cierre;
                 $cajaAperturada->descripcion_cierre     = $descripcion_cierre;
-                $cajaAperturada->total_venta            = $montoTotal;
-                $cajaAperturada->venta_contado          = $montoAlContado;
-                $cajaAperturada->total_qr               = $totalQr;
-                $cajaAperturada->total_salida           = $otrasSalidas;
-                $cajaAperturada->total_transferencia    = $totalTramsferencia;
+                $cajaAperturada->total_venta            = $totalIngresosVenta;
+                $cajaAperturada->venta_contado          = $totalIngresosVentaEfectivo;
+                $cajaAperturada->otro_ingreso           = $totalOtrosIngresos;
+                $cajaAperturada->total_ingreso          = $totalRecaudado;
+                $cajaAperturada->total_qr               = $totalIngresosVentaEQr;
+                $cajaAperturada->total_transferencia    = $totalIngresosVentaTramsferencia;
+                $cajaAperturada->total_salida           = $totalSalidas;
+                $cajaAperturada->saldo                  = $monto_cierre + $totalIngresosVentaTramsferencia + $totalIngresosVentaEQr - $totalRecaudado;
+                $cajaAperturada->usuario_modificador_id = $usuario->id;
                 $cajaAperturada->estado                 = 'Cerrado';
 
-                $cajaAperturada->saldo                  = $saldo;
+                // dd($cajaAperturada);
+
                 $cajaAperturada->save();
 
 
@@ -186,21 +203,122 @@ class CajaController extends Controller
         return $data;
     }
 
-    public function habilitarCaja(Request $request)
+    // public function habilitarCaja(Request $request)
+    // {
+    //     if ($request->ajax()) {
+
+    //         $id = $request->input('id');
+    //         $usuario = Auth::user();
+
+    //         $caja = Caja::find($id);
+    //         $caja->usuario_modificador_id = $usuario->id;
+    //         $caja->estado = 'Abierta';
+    //         $caja->save();
+
+    //         $data = Respuesta::success(null, "Datos obtenidos correctamente");
+    //     } else {
+    //         $data = Respuesta::error(null, "No existe");
+    //     }
+    //     return $data;
+    // }
+
+    public function formularioEdicionCaja(Request $request)
     {
+
         if ($request->ajax()) {
 
-            $id = $request->input('id');
-            $usuario = Auth::user();
+            $caja_editar_id             = $request->input('caja_editar_id');
+            $usuario_apertura_id        = $request->input('usuario_apertura_id');
+            $descripcion_apertura       = $request->input('descripcion_apertura');
+            $usuario_cierre_id_edicion  = $request->input('usuario_cierre_id_edicion');
+            $descripcion_cierre_edicion = $request->input('descripcion_cierre_edicion');
+            $estado_caja                = $request->input('estado_caja');
 
-            $caja = Caja::find($id);
-            $caja->usuario_modificador_id = $usuario->id;
-            $caja->estado = 'Abierta';
+            $caja                      = Caja::find($caja_editar_id);
+            $caja->usuario_apertura_id = $usuario_apertura_id;
+            $caja->descripcion         = $descripcion_apertura;
+            $caja->usuario_cierre_id   = $usuario_cierre_id_edicion;
+            $caja->descripcion_cierre  = $descripcion_cierre_edicion;
+            $caja->estado              = $estado_caja;
+
             $caja->save();
-
             $data = Respuesta::success(null, "Datos obtenidos correctamente");
         } else {
-            $data = Respuesta::error(null, "No existe");
+            $data = Respuesta::error(null, "Error al obtener los datos");
+        }
+        return $data;
+    }
+
+    public function verCaja(Request $request)
+    {
+
+        if ($request->ajax()) {
+
+            $caja_id = $request->input('caja');
+
+            $caja = Caja::find($caja_id);
+
+            // dd($request->all());
+
+            // TRONCALES
+            $pagosVenta = Pago::where('apertura_caja', 'No')
+                ->where('caja_id', $caja->id)
+                ->where('estado', 'INGRESO')
+                ->whereNotNull('factura_id')
+                ->get();
+
+            $pagosOtros = Pago::where('apertura_caja', 'No')
+                ->where('caja_id', $caja->id)
+                ->where('estado', 'INGRESO')
+                ->whereNull('factura_id')
+                ->get();
+
+            // TOTAL APERTURA CAJA
+            $totalAperturaCaja = Pago::where('apertura_caja', 'Si')
+                ->where('caja_id', $caja->id)
+                ->where('estado', 'INGRESO')
+                ->sum('monto');
+
+            // SALIDA
+            $totalSalidas = Pago::where('apertura_caja', 'No')
+                ->where('caja_id', $caja->id)
+                ->where('estado', 'SALIDA')
+                ->sum('monto');
+
+            // INGRESOS DE VENTAS
+            $totalIngresosVenta              = $pagosVenta->sum('monto');
+            $totalIngresosVentaEfectivo      = $pagosVenta->where('tipo_pago', 'EFECTIVO')->sum('monto');
+            $totalIngresosVentaTramsferencia = $pagosVenta->where('tipo_pago', 'TRANSFERENCIA')->sum('monto');
+            $totalIngresosVentaEQr           = $pagosVenta->where('tipo_pago', 'QR')->sum('monto');
+
+            // OTROS INGRESOS
+            $totalOtrosIngresos                   = $pagosOtros->sum('monto');
+            $totalOtrosIngresosVentaEfectivo      = $pagosOtros->where('tipo_pago', 'EFECTIVO')->sum('monto');
+            $totalOtrosIngresosVentaTramsferencia = $pagosOtros->where('tipo_pago', 'TRANSFERENCIA')->sum('monto');
+            $totalOtrosIngresosVentaEQr           = $pagosOtros->where('tipo_pago', 'QR')->sum('monto');
+
+
+            $valores = [
+                'listado' => view('caja.verCaja')->with(compact(
+                    'totalIngresosVenta',
+                    'totalIngresosVentaEfectivo',
+                    'totalIngresosVentaTramsferencia',
+                    'totalIngresosVentaEQr',
+
+                    'totalOtrosIngresos',
+                    'totalOtrosIngresosVentaEfectivo',
+                    'totalOtrosIngresosVentaTramsferencia',
+                    'totalOtrosIngresosVentaEQr',
+
+                    'totalAperturaCaja',
+
+                    'totalSalidas'
+
+                ))->render()
+            ];
+            $data = Respuesta::success($valores, "Datos obtenidos correctamente");
+        } else {
+            $data = Respuesta::error(null, "Error al obtener los datos");
         }
         return $data;
     }

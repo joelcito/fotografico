@@ -88,108 +88,6 @@
                                 </a>
                             </div>
 
-                            {{-- <div class="menu-item">
-                                <a class="menu-link" href="{{ url('tiporeceta/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Tipo Receta</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('motivo/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Motivo</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('referencia/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Referencia</span>
-                                </a>
-                            </div>
-
-
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('marca/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Marca</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('color/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Color</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('tipoMontura/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Tipo Montura</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('montura/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Montura</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('oftalmologo/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Especialista</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('solicitud/listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Solicitudes</span>
-                                </a>
-                            </div> --}}
-
-                            {{-- <div class="menu-item">
-                                <a class="menu-link" href="{{ route('solicitudAnulacion.listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Solicitud Anulaciones</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link {{ Route::currentRouteName() == 'pago.listado' ? 'active' : '' }}"
-                                    href="{{ route('pago.listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Ventas del Dia</span>
-                                </a>
-                            </div>
-
                             <div class="menu-item">
                                 <a class="menu-link {{ Route::currentRouteName() == 'categoria.listado' ? 'active' : '' }}"
                                     href="{{ route('categoria.listado') }}">
@@ -200,91 +98,8 @@
                                 </a>
                             </div>
 
-                            <div class="menu-item">
-                                <a class="menu-link {{ Route::currentRouteName() == 'subCategoria.listado' ? 'active' : '' }}"
-                                    href="{{ route('subCategoria.listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Sub Categorias</span>
-                                </a>
-                            </div> --}}
                         </div>
                     </div>
-
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::is('fondoAcumulado/*') ? 'show' : '' }}">
-                        <!--begin:Menu link-->
-                        <span class="menu-link">
-                            <span class="menu-icon">
-                                <i class="fa fa-university"></i>
-                            </span>
-                            <span class="menu-title text-white">Fondo Acumulado</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <!--end:Menu link-->
-                        <!--begin:Menu sub-->
-                        {{-- <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link {{ Route::currentRouteName() == 'fondoAcumulado.categoria' ? 'active' : '' }} " href="{{ route('fondoAcumulado.categoria') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Categoria</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                        </div>
-                        <!--end:Menu sub-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" {{ Route::currentRouteName() == 'fondoAcumulado.subCategoria' ? 'active' : '' }} " href="{{ route('fondoAcumulado.subCategoria') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Sub Categoria</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                        </div>
-                        <!--end:Menu sub-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" {{ Route::currentRouteName() == 'fondoAcumulado.listaIngresoSinRecepcion' ? 'active' : '' }} " href="{{ route('fondoAcumulado.listaIngresoSinRecepcion') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Ingreso sin Recepcionar</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                        </div>
-                        <!--end:Menu sub-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link {{ Route::currentRouteName() == 'fondoAcumulado.cajaFuerte' ? 'active' : '' }} " href="{{ route('fondoAcumulado.cajaFuerte') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Caja Fuerte</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                        </div>
-                        <!--end:Menu sub--> --}}
-                    </div>
-                {{-- @endif --}}
-
 
                 <div data-kt-menu-trigger="click"
                     class="menu-item menu-accordion {{ Request::is('pago/*', 'cotizacion/*') ? 'show' : '' }}">
@@ -345,79 +160,18 @@
                         </div>
                     </div>
 
-                    {{-- <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{ route('caja.listado') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title text-white">Cajas de dia</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    @if (Auth::user()->isCajero() || Auth::user()->isAdmin())
-                        <div class="menu-sub menu-sub-accordion">
-                            <div class="menu-item">
-                                <a class="menu-link" href="{{ url('pago/listadoDeuda') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Cuentas por Cobrar</span>
-                                </a>
-                            </div>
-                        </div>
-                    @endif
-                    @if (Auth::user()->isCajero())
-                        <div class="menu-sub menu-sub-accordion">
-                            <div class="menu-item">
-                                <a class="menu-link {{ Route::currentRouteName() == 'pago.listado' ? 'active' : '' }}"
-                                    href="{{ route('pago.listado') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title text-white">Ventas del Dia</span>
-                                </a>
-                            </div>
-                        </div>
-                    @endif
-
-                    <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{ route('montura.busquedaProducto') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title text-white">Busqueda Prod.</span>
-                            </a>
-                        </div>
-                    </div> --}}
                 </div>
                 <!--end:Menu item-->
 
-                {{-- <div data-kt-menu-trigger="click"
-                    class="menu-item menu-accordion {{ Request::is('pago/*', 'cotizacion/*') ? 'show' : '' }}">
-                    <!--begin:Menu link-->
-                    <span class="menu-link">
+                <div class="menu-item">
+                    <a class="menu-link {{ Request::is('agenda/*') ? 'active' : '' }}" href="{{ route('agenda.listado') }}">
                         <span class="menu-icon">
-                            <i class="fa fa-university"></i>
+                            <i class="fa fa-book"></i>
                         </span>
-                        <span class="menu-title text-white">Reportes</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <!--end:Menu link-->
+                        <span class="menu-title text-white">AGENDA</span>
+                    </a>
+                </div>
 
-                    <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{ route('reporte.listado') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title text-white">Lista</span>
-                            </a>
-                        </div>
-                    </div>
-                </div> --}}
                 <!--end:Menu item-->
             </div>
             <!--end::Menu-->

@@ -53,4 +53,9 @@ class Pago extends Model
             ->get()
         ;
     }
+
+    public function categoria()
+    {
+        return $this->belongsTo('App\Models\Categoria', 'categoria_id');
+    }
 }

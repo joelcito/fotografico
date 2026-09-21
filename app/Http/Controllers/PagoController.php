@@ -9,8 +9,10 @@ use App\Models\Pago;
 use App\Models\Sucursal;
 use App\Models\User;
 use App\Utils\Respuesta;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class PagoController extends Controller
 {
@@ -234,16 +236,15 @@ class PagoController extends Controller
         $caja            = new Caja();
         $cajaAbierta     = $caja->sacaCajaVigente($sucursal->id);
 
+        // dd($usuario->isAdministrador());
+
         // CAJAS APERTURADAS
-        $cajas = $caja->cajasUsuario($usuario->id, false, $sucursal->id);
+        $cajas = $caja->cajasUsuario($usuario->id, $usuario->isAdministrador(), $sucursal->id);
+        // dd($cajas);
 
-        $categoriasIngreso = Categoria::where('tipo', 'INGRESO')
-            ->where('estado', 'PAGO')
-            ->get();
+        $categoriasIngreso = Categoria::where('tipo', 'INGRESO')->get();
 
-        $categoriasSalida  = Categoria::where('tipo', 'SALIDA')
-            ->where('estado', 'PAGO')
-            ->get();
+        $categoriasSalida  = Categoria::where('tipo', 'SALIDA')->get();
 
         return view('pago.listado')->with(compact('sucursales', 'fechaIni', 'fechaFin', 'usuarios', 'cajaAbierta', 'cajas', 'usuario', 'categoriasIngreso',  'categoriasSalida'));
     }
@@ -291,5 +292,65 @@ class PagoController extends Controller
             $data = Respuesta::error(null, "Error al obtener los datos");
         }
         return $data;
+    }
+
+    public function guardarTipoIngresoSalida(Request $request)
+    {
+
+        if ($request->ajax()) {
+
+            // dd($request->all());
+
+            $usuario      = Auth::user();
+            $categoria_id = $request->input('categoria_id');
+            $tipo_pago    = $request->input('tipo_pago');
+            $monto        = $request->input('monto');
+            $tipo         = $request->input('tipo');
+            $descripcion  = $request->input('descripcion');
+
+            $sucursal     = $usuario->sucursal;
+
+            $caja        = new Caja();
+            $cajaVigente = $caja->sacaCajaVigente($sucursal->id);
+
+            $pago                     = new pago();
+            $pago->usuario_creador_id = $usuario->id;
+            $pago->sucursal_id        = $sucursal->id;
+            $pago->caja_id            = $cajaVigente->id;
+            $pago->categoria_id       = $categoria_id;
+            $pago->monto              = $monto;
+            $pago->fecha              = date('Y-m-d H:i:s');
+            $pago->descripcion        = $descripcion;
+            $pago->apertura_caja      = "No";
+            $pago->tipo_pago          = $tipo_pago;
+            $pago->estado             = $tipo;
+            $pago->cambio             = 0;
+            $pago->save();
+
+            $data = Respuesta::success(null, "Datos registrados correctamente");
+        } else {
+            $data = Respuesta::error(null, "Error al obtener los datos");
+        }
+        return $data;
+    }
+
+    public function comprobantePago(Request $request, $pago_id)
+    {
+
+        $pago = Pago::find($pago_id);
+
+        $html = View::make('pago.pdf.comprobantePago', compact(['pago']))->render();
+        $dompdf = new Dompdf();
+        $dompdf->setPaper(array(0, 0, 300.00, 504.00), 'landscape'); //cambio orientacion de la hoja
+        $dompdf->loadHtml($html);
+        $dompdf->render();
+        //return $dompdf->stream('Reporte_Ingresos.pdf');
+
+        return response($dompdf->output())
+            ->header('Content-Type', 'application/pdf')
+            ->header('Content-Disposition', 'inline; filename=Cotizacion.pdf');
+
+        // dd($request->all(), $pago_id);
+
     }
 }

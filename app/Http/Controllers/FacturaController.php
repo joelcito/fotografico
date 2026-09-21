@@ -324,11 +324,12 @@ class FacturaController extends Controller
             } else {
                 $sucursales = Sucursal::all();
             }
-            $vendedores = User::whereIn('rol_id', [2, 5, 6])->get();
         } else {
             $sucursales = Sucursal::where('id', $usuario->sucursal_id)->get();
-            $vendedores = User::where('rol_id', 2)->where('sucursal_id', $usuario->sucursal_id)->get();
         }
+
+        $vendedores = User::all();
+
 
         return view('factura.listado')->with(compact('clientes', 'vendedores', 'sucursales'));
     }

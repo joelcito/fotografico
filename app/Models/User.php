@@ -39,4 +39,18 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Sucursal::class, 'sucursal_id');
     }
+
+    public function isAdministrador(){
+        return $this->rol_id == 1;
+    }
+
+    public function isCajaVenta()
+    {
+        return $this->rol_id == 2;
+    }
+
+    public function isVenta()
+    {
+        return $this->rol_id == 3;
+    }
 }

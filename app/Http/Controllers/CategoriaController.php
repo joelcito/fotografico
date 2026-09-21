@@ -18,6 +18,7 @@ class CategoriaController extends Controller
     {
         if ($request->ajax()) {
             $categorias = Categoria::all();
+            // $categorias = Categoria::all();
             $valores = [
                 'listado' => view('categoria.ajaxListado')->with(compact('categorias'))->render()
             ];
@@ -28,32 +29,35 @@ class CategoriaController extends Controller
         return $data;
     }
 
-    public function guardarCategoria(Request $request)
+    public function guardar(Request $request)
     {
         if ($request->ajax()) {
 
+            // dd($request->all());
+
             $request->validate([
-                'tipo' => 'required',
                 'nombre' => 'required',
+                'tipo' => 'required',
             ]);
 
             $id = $request->input('id');
 
-            $nombre  = $request->input('nombre');
-            $tipo  = $request->input('tipo');
-            $usuario = Auth::user();
+            $nombre      = $request->input('nombre');
+            $tipo        = $request->input('tipo');
+            $usuario     = Auth::user();
 
             if ($id == 0) {
-                $cat = new Categoria();
-                $cat->usuario_creador_id = $usuario->id;
+                $categoria                     = new Categoria();
+                $categoria->usuario_creador_id = $usuario->id;
             } else {
-                $cat = Categoria::find($id);
-                $cat->usuario_modificador_id = $usuario->id;
+                $categoria = Categoria::find($id);
+                $categoria->usuario_modificador_id = $usuario->id;
             }
 
-            $cat->nombre = $nombre;
-            $cat->tipo = $tipo;
-            $cat->save();
+            $categoria->nombre      = $nombre;
+            $categoria->tipo        = $tipo;
+            // $categoria->estado      = "PAGO";
+            $categoria->save();
 
             $data = Respuesta::success(null, "Datos obtenidos correctamente");
         } else {
@@ -62,16 +66,16 @@ class CategoriaController extends Controller
         return $data;
     }
 
-    public function eliminarCategoria(Request $request)
+    public function eliminar(Request $request)
     {
         if ($request->ajax()) {
 
             $id = $request->input('id');
             $usuario = Auth::user();
 
-            $cat = Categoria::find($id);
-            $cat->usuario_eliminador_id = $usuario->id;
-            $cat->save();
+            $categoria = Categoria::find($id);
+            $categoria->usuario_eliminador_id = $usuario->id;
+            $categoria->save();
 
             Categoria::destroy($id);
 

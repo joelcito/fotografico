@@ -30,6 +30,147 @@
     </div>
     <!--end::Modal - Add task-->
 
+    <!--begin::Modal - Add task-->
+    <div class="modal fade" id="modalVerCaja" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div id="contenidoCaja"></div>
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!--end::Modal - Add task-->
+
+    <!--begin::Modal - Add task-->
+    <div class="modal fade" id="modalEdicionCaja" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light-info" id="kt_modal_add_user_header">
+                    <h3 class="fw-bold">FORMULARIO DE EDICION DE CAJA</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body scroll-y">
+                    <form id="formularioEdicionCaja">
+                        <input type="hidden" id="caja_editar_id" name="caja_editar_id">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">usuario Apertura</label>
+                                    <select name="usuario_apertura_id" id="usuario_apertura_id"
+                                        class="form-select form-select-sm">
+                                        @foreach ($usuarios as $usuario)
+                                        <option value="{{$usuario->id}}">{{ $usuario->nombres." ".$usuario->ap_paterno."
+                                            ".$usuario->ap_materno }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Descripcion apertura</label>
+                                    <input type="text" class="form-control form-control-sm" id="descripcion_apertura"
+                                        name="descripcion_apertura">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Monto Apertura</label>
+                                    <input type="number" class="form-control form-control-sm" id="monto_apertura_edicion"
+                                        name="monto_apertura_edicion" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">usuario Cierre</label>
+                                    <select name="usuario_cierre_id_edicion" id="usuario_cierre_id_edicion"
+                                        class="form-select form-select-sm">
+                                        @foreach ($usuarios as $usuario)
+                                        <option value="{{$usuario->id}}">{{ $usuario->nombres." ".$usuario->ap_paterno."
+                                            ".$usuario->ap_materno }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Descripcion Cierre</label>
+                                    <input type="text" class="form-control form-control-sm" id="descripcion_cierre_edicion"
+                                        name="descripcion_cierre_edicion">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Monto Cierre</label>
+                                    <input type="number" class="form-control form-control-sm" id="monto_cierre_edicion"
+                                        name="monto_cierre_edicion" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Venta Total</label>
+                                    <input type="number" class="form-control form-control-sm" id="venta_total"
+                                        name="venta_total" min="1" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Venta Efectivo</label>
+                                    <input type="text" class="form-control form-control-sm" id="venta_efectivo"
+                                        name="venta_efectivo" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Venta Transferecina</label>
+                                    <input type="text" class="form-control form-control-sm" id="venta_transferencia"
+                                        name="venta_transferencia" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Venta Qr</label>
+                                    <input type="text" class="form-control form-control-sm" id="venta_qr" name="venta_qr"
+                                        disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Total Salida</label>
+                                    <input type="number" class="form-control form-control-sm" id="total_salida"
+                                        name="total_salida" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Estado</label>
+                                    <select class="form-select form-select-sm" id="estado_caja" name="estado_caja">
+                                        <option value="Abierta">Abierta</option>
+                                        <option value="Cerrado">Cerrado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-sm w-100 btn-success" id="boton_abrir_caja"
+                                onclick="guardarEdicionCaja()">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal body-->
+            </div>
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!--end::Modal - Add task-->
+
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
         <div id="kt_app_content" class="app-content flex-column-fluid">
@@ -270,51 +411,97 @@
         //     $('#modalRol').modal('show')
         // }
 
-        function habilitarCaja(caja){
-            Swal.fire({
-                title: "Quieres habilitar la caja de fecha de apertura " + caja.fecha_apertura + "?",
-                text: "Esto permitirá realizar operaciones en la caja!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText: "Si, habilitar!",
-                cancelButtonText: "No, cancelar!",
-                reverseButtons: true
-            }).then(function(result) {
-                if (result.value) {
-                    $.ajax({
-                        url: "{{ route('caja.habilitarCaja') }}",
-                        method: "POST",
-                        data: caja,
-                        success: function (resultado) {
-                            if(resultado.estado){
-                                Swal.fire({
-                                    title: "SE HABILITO LA CAJA.",
-                                    icon: "success",
-                                    timer: 3000, //Se cierra en 3 segundos
-                                    showConfirmButton: false
-                                });
+        function editarCaja(caja){
 
-                                window.location.reload();
-                            }
-                        },
-                        error: function (xhr) {
+            $('#usuario_apertura_id').val(caja.usuario_apertura_id);
+            $('#descripcion_apertura').val(caja.descripcion);
+            $('#monto_apertura_edicion').val(caja.monto_apertura);
+            $('#usuario_cierre_id_edicion').val(caja.usuario_cierre_id);
+            $('#descripcion_cierre_edicion').val(caja.descripcion_cierre);
+            $('#monto_cierre_edicion').val(caja.monto_cierre);
+            $('#venta_total').val(caja.total_venta);
+            $('#venta_efectivo').val(caja.venta_contado);
+            $('#venta_transferencia').val(caja.total_transferencia);
+            $('#venta_qr').val(caja.total_qr);
+            $('#total_salida').val(caja.total_salida);
+            $('#estado_caja').val(caja.estado);
+            $('#caja_editar_id').val(caja.id);
+
+            $('#modalEdicionCaja').modal('show')
+        }
+
+        function guardarEdicionCaja(){
+            if($('#formularioEdicionCaja')[0].checkValidity()){
+                $('#boton_cerrar_caja').attr('disabled', true);
+                let datos = $('#formularioEdicionCaja').serializeArray();
+                $.ajax({
+                    url: "{{ url('caja/formularioEdicionCaja') }}",
+                    method: "POST",
+                    data: datos,
+                    success: function(resultado) {
+                        if (resultado.estado) {
+                            Swal.fire({
+                                title: "EL REGISTRO FUE EXITOSO.",
+                                icon: "success",
+                                timer: 3000, // Se cierra en 3 segundos
+                                showConfirmButton: false
+                            });
+
+                            location.reload();
+                        } else {
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Error',
-                                text: 'Ocurrió un error inesperado.',
-
+                                text: resultado.data,
                             });
                         }
+                    },
+                    error: function(xhr) {
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Ocurrió un error inesperado.' + xhr,
+                        });
+                    }
+                });
+            }else{
+                $('#formularioEdicionCaja')[0].reportValidity()
+            }
+        }
+
+        function verCaja(caja){
+            $.ajax({
+                url: "{{ url('caja/verCaja') }}",
+                method: "POST",
+                data: {caja:caja},
+                success: function(resultado) {
+                    if (resultado.estado) {
+
+                        $('#contenidoCaja').html(resultado.data.listado)
+                        $('#modalVerCaja').modal('show')
+
+                        // Swal.fire({
+                        //     title: "EL REGISTRO FUE EXITOSO.",
+                        //     icon: "success",
+                        //     timer: 3000, // Se cierra en 3 segundos
+                        //     showConfirmButton: false
+                        // });
+
+                        // location.reload();
+                    } else {
+
+                    }
+                },
+                error: function(xhr) {
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Ocurrió un error inesperado.' + xhr,
                     });
-                } else if (result.dismiss === "cancel") {
-                    Swal.fire(
-                        "Cancelado",
-                        "La operacion fue cancelada",
-                        "error"
-                    )
                 }
             });
-
         }
     </script>
 @endsection

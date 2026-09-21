@@ -31,12 +31,6 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="fv-row mb-7">
-                                    <label class="required fw-semibold fs-6 mb-2">SubCategoria</label>
-                                    <select class="form-select form-select-sm" name="subcategoria_id" id="subcategoria_id"></select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="fv-row mb-7">
                                     <label class="fw-semibold fs-6 mb-2 required">Tipo Pago</label>
                                     <select name="tipo_pago" id="tipo_pago" class="form-control form-control-sm" required>
                                         <option value="">Seleccione</option>
@@ -46,18 +40,17 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="fv-row mb-7">
                                     <label class="required fw-semibold fs-6 mb-2">Monto</label>
-                                    <input type="number" id="monto" name="monto"
-                                        class="form-control form-control-solid mb-3 mb-lg-0" min="0.1" step="0.01"
-                                        value="0" required>
+                                    <input type="number" id="monto" name="monto" class="form-control form-control-solid mb-3 mb-lg-0" min="0.1"
+                                        step="0.01" value="0" required onclick="this.select()">
                                     <input type="hidden" id="tipo" name="tipo" required>
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
                                 <div class="fv-row mb-7">
                                     <label class="required fw-semibold fs-6 mb-2">Descripcion</label>
                                     <input type="text" id="descripcion" name="descripcion"
@@ -274,9 +267,6 @@
 
             $('#categoria_id').empty();
             $('#categoria_id').append('<option value="">Seleccione</option>');
-
-            $('#subcategoria_id').empty();
-            $('#subcategoria_id').append('<option value="">Seleccione</option>');
 
             categoriasIngreso.forEach(c => {
                 $('#categoria_id').append(

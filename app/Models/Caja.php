@@ -73,6 +73,11 @@ class Caja extends Model
         // dd($usuario_id, $admin);
 
         if($admin){
+            // dd(
+            //     $this->select('cajas.*', 'sucursal_id')
+            //     ->orderBy('cajas.id', 'desc')
+            //     ->toSql()
+            //     );
             return $this->select('cajas.*', 'sucursal_id')
                         ->orderBy('cajas.id', 'desc')
                         ->get();

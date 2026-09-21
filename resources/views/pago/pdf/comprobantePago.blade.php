@@ -145,8 +145,7 @@
             <tr>
                 <th>SUCURSAL</th>
                 <th>CATEGORIA</th>
-                <th>SUB CATEGORIA</th>
-                <th>COD. VENTA</th>
+                <th>NRO. RECIBO</th>
                 <th>FECHA</th>
                 <th>DESCRIPCION</th>
                 <th>TIPO PAGO</th>
@@ -155,10 +154,9 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $pago?->puntoVenta?->sucursal?->nombre }}</td>
-                <td>{{ $pago->subCategoria?->Categoria?->nombre }}</td>
-                <td>{{ $pago->subCategoria?->nombre }}</td>
-                <td>{{ $pago->factura?->codigo_venta }}</td>
+                <td>{{ $pago?->sucursal?->nombre }}</td>
+                <td>{{ $pago->categoria?->nombre }}</td>
+                <td>{{ $pago->factura?->numero_recibo }}</td>
                 <td>{{ $pago->fecha }}</td>
                 <td>{{ $pago->descripcion }}</td>
                 <td>{{ $pago->tipo_pago }}</td>

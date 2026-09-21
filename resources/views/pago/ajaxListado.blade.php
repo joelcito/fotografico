@@ -5,7 +5,7 @@
             <tr class="text-start text-muted fw-bold fs-8 text-uppercase gs-0">
                 <th width="10px">N° Caja</th>
                 <th>Sucursal</th>
-                <th>Codigo</th>
+                <th>Nro Rec</th>
                 <th>Fecha</th>
                 <th>Descripcion</th>
                 <th>Tipo Pago</th>
@@ -34,8 +34,8 @@
             @forelse ($pagos as $pago)
                 <tr class="{{ 'bg-light-warning' }}">
                     <td>{{ $pago->caja_id }}</td>
-                    <td>{{ $pago?->puntoVenta?->sucursal?->nombre }}</td>
-                    <td>{{ $pago->factura?->codigo_venta }}</td>
+                    <td>{{ $pago?->sucursal?->nombre }}</td>
+                    <td>{{ $pago->factura?->numero_recibo }}</td>
                     <td>{{ $pago->fecha }}</td>
                     <td>{{ $pago->descripcion }}</td>
                     <td>{{ $pago->tipo_pago }}</td>

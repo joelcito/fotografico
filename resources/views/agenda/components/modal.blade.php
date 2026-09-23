@@ -139,6 +139,118 @@
 
                     </div>
 
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="generar_venta"
+                                    value="1">
+
+                                <label class="form-check-label fw-bold" for="generar_venta">
+                                    Generar venta con esta cita
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="bloqueVentaAgenda" style="display:none;" class="mt-3">
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label>Servicio</label>
+
+                                <select id="servicio_id_agenda"
+                                        class="form-control form-control-sm">
+
+                                    <option value="">SELECCIONE</option>
+
+                                    @foreach($servicios as $servicio)
+                                        <option value="{{ $servicio->id }}"
+                                                data-precio="{{ $servicio->precio_venta }}">
+                                            {{ $servicio->nombre }}
+                                        </option>
+                                    @endforeach
+
+                                </select>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label>Cantidad</label>
+
+                                <input type="number"
+                                    id="cantidad_agenda"
+                                    class="form-control form-control-sm"
+                                    value="1"
+                                    min="1">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label>Precio</label>
+
+                                <input type="number"
+                                    id="precio_agenda"
+                                    class="form-control form-control-sm"
+                                    value="0"
+                                    step="0.01">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label>Total</label>
+
+                                <input type="number"
+                                    id="total_agenda"
+                                    class="form-control form-control-sm"
+                                    value="0"
+                                    readonly>
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-3">
+
+                            <div class="col-md-4">
+                                <label>Adelanto</label>
+
+                                <input type="number"
+                                    id="monto_pagado_agenda"
+                                    class="form-control form-control-sm"
+                                    value="0"
+                                    min="0"
+                                    step="0.01">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Tipo de pago</label>
+
+                                <select id="tipo_pago_agenda"
+                                        class="form-control form-control-sm">
+
+                                    <option value="">SIN PAGO</option>
+                                    <option value="EFECTIVO">EFECTIVO</option>
+                                    <option value="QR">QR</option>
+                                    <option value="TRANSFERENCIA">TRANSFERENCIA</option>
+
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Descripción venta</label>
+
+                                <input type="text"
+                                    id="descripcion_venta_agenda"
+                                    class="form-control form-control-sm"
+                                    placeholder="Ej. Reserva sesión fotográfica">
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </form>
 
             </div>

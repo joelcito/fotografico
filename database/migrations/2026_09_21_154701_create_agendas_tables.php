@@ -16,14 +16,19 @@ return new class extends Migration
 
             $table->foreign('usuario_creador_id')->references('id')->on('users');
             $table->unsignedBigInteger('usuario_creador_id')->nullable();
+
             $table->foreign('usuario_modificador_id')->references('id')->on('users');
             $table->unsignedBigInteger('usuario_modificador_id')->nullable();
+
             $table->foreign('usuario_eliminador_id')->references('id')->on('users');
             $table->unsignedBigInteger('usuario_eliminador_id')->nullable();
+
             $table->foreignId('usuario_asignado_id')->nullable()->constrained('users');
 
             $table->foreignId('sucursal_id')->nullable()->constrained('sucursales');
             $table->foreignId('cliente_id')->nullable()->constrained('clientes');
+
+            $table->foreignId('factura_id')->nullable()->constrained('facturas');
 
             $table->string('titulo')->nullable();
             $table->text('descripcion')->nullable();

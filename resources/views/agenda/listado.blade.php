@@ -44,7 +44,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
 
     const calendarEl = document.getElementById('calendar');
 
@@ -299,7 +299,35 @@
                 $('#descripcion').val(),
 
             observacion:
-                $('#observacion').val()
+                $('#observacion').val(),
+
+            // ==========================
+            // DATOS PARA VENTA
+            // ==========================
+
+            generar_venta:
+                $('#generar_venta').is(':checked') ? 1 : 0,
+
+            servicio_id:
+                $('#servicio_id_agenda').val(),
+
+            cantidad:
+                $('#cantidad_agenda').val(),
+
+            precio:
+                $('#precio_agenda').val(),
+
+            monto_total:
+                $('#total_agenda').val(),
+
+            monto_pagado:
+                $('#monto_pagado_agenda').val(),
+
+            tipo_pago:
+                $('#tipo_pago_agenda').val(),
+
+            descripcion_venta:
+                $('#descripcion_venta_agenda').val()
         };
 
 
@@ -721,6 +749,52 @@
             ':' +
             second;
 
+    }
+
+    $('#generar_venta').on('change', function () {
+
+        if ($(this).is(':checked')) {
+
+            $('#bloqueVentaAgenda').slideDown();
+
+        } else {
+
+            $('#bloqueVentaAgenda').slideUp();
+
+            $('#servicio_id_agenda').val('');
+            $('#cantidad_agenda').val(1);
+            $('#precio_agenda').val(0);
+            $('#total_agenda').val(0);
+            $('#monto_pagado_agenda').val(0);
+            $('#tipo_pago_agenda').val('');
+        }
+
+    });
+
+    $('#servicio_id_agenda').on('change', function () {
+
+        let option = $(this).find(':selected');
+
+        let precio = parseFloat(option.data('precio')) || 0;
+
+        $('#precio_agenda').val(precio.toFixed(2));
+
+        calcularTotalAgenda();
+
+    });
+
+    $('#cantidad_agenda, #precio_agenda').on('input change', function () {
+        calcularTotalAgenda();
+    });
+
+    function calcularTotalAgenda() {
+
+        let cantidad = parseFloat($('#cantidad_agenda').val()) || 0;
+        let precio = parseFloat($('#precio_agenda').val()) || 0;
+
+        let total = cantidad * precio;
+
+        $('#total_agenda').val(total.toFixed(2));
     }
 
 });

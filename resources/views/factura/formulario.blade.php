@@ -263,9 +263,10 @@
                                                 <button title="Mostrar carro de compras"
                                                     class="btn btn-dark btn-sm btn-circle btn-icon"
                                                     onclick="mostrarCarritoVentas()"><i class="fa fa-shopping-basket"></i></button>
+                                            --}}
                                                 <button title="Agregar cliente" class="btn btn-primary btn-sm btn-circle btn-icon"
                                                     onclick="modalAgregarCliente()"><i class="fa fa-user-plus"></i></button>
-                                            </div> --}}
+                                            </div>
                                         </div>
                                         <form id="formulario_cliente_escogido" style="display: none">
                                             <div class="row">
@@ -1031,11 +1032,72 @@
 
                         }
                         $('#modal_new_cliente').modal('hide');
+                    },
+                    error: function(xhr) {
+
+                        limpiarErorres();
+
+                        if (xhr.status === 422) {
+
+                            let errores = xhr.responseJSON.errors;
+
+                            // Relacionamos el campo de Laravel con el ID del input
+                            let campos = {
+                                nombres: '#nombres_cliente_new_usuaio_empresa',
+                                ap_paterno: '#ap_paterno_cliente_new_usuaio_empresa',
+                                ap_materno: '#ap_materno_cliente_new_usuaio_empresa',
+                                cedula: '#cedula_cliente_new_usuaio_empresa',
+                                complemento: '#complemento_cliente_new_usuaio_empresa',
+                                nit: '#nit_cliente_new_usuaio_empresa',
+                                razon_social: '#razon_social_cliente_new_usuaio_empresa',
+                                correo: '#correo_cliente_new_usuaio_empresa',
+                                numero_celular: '#num_ceular_cliente_new_usuaio_empresa'
+                            };
+
+                            for (let campo in errores) {
+
+                                let mensaje = errores[campo][0];
+
+                                console.log(campo, " <+> ", mensaje);
+
+                                // Buscamos el input correspondiente
+                                let input = $(campos[campo]);
+
+                                if (input.length) {
+
+                                    input.addClass('is-invalid');
+
+                                    // Evitamos duplicar mensajes
+                                    input.next('.invalid-feedback').remove();
+
+                                    input.after(`
+                                        <div class="invalid-feedback">
+                                            ${mensaje}
+                                        </div>
+                                    `);
+                                }
+                            }
+
+                        } else {
+
+                            console.log(xhr.responseText);
+
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Ocurrió un error inesperado.',
+                            });
+                        }
                     }
                 })
             } else {
                 $("#formulario_new_cliente")[0].reportValidity();
             }
+        }
+
+        function limpiarErorres(){
+            $(".invalid-feedback").remove();
+            $(".is-invalid").removeClass("is-invalid");
         }
 
         function modalAgregarProducto() {

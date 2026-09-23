@@ -201,7 +201,7 @@ class FacturaController extends Controller
                         $movimiento->salida             = $detalle->cantidad;
                         $movimiento->ingreso            = 0;
                         $movimiento->fecha              = date('Y-m-d H:i:s');
-                        $movimiento->descripcion        = "VENTA";
+                        $movimiento->descripcion        = 'VENTA';
                         $movimiento->save();
                     }
 
@@ -242,7 +242,7 @@ class FacturaController extends Controller
                     $pago->usuario_creador_id = $usuario->id;
                     $pago->factura_id         = $facturaVerdad->id;
                     $pago->sucursal_id        = $sucursal_id;
-                    $pago->caja_id = $cajaAbierta->id;
+                    $pago->caja_id            = $cajaAbierta->id;
                     $pago->monto              = ($monto_pagado >= $monto_total) ? $monto_total : $monto_pagado;
                     $pago->fecha              = $facturaVerdad->fecha;
                     $pago->descripcion        = 'VENTA';
@@ -467,7 +467,7 @@ class FacturaController extends Controller
     }
 
     // ********************* FUNCIONES PRIVADAS **************
-    protected function cantidadStockEmpresa($sucursal_id, $id_servicio)
+    public function cantidadStockEmpresa($sucursal_id, $id_servicio)
     {
         $movimientoModelo = new Movimiento();
         $stock = $movimientoModelo->cantidaDisponile($sucursal_id, $id_servicio);

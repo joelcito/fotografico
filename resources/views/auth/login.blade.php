@@ -76,7 +76,7 @@
                 <!--begin::Aside-->
                 <div class="d-flex flex-center flex-lg-start flex-column">
                     <!--begin::Logo-->
-                    <img alt="Logo" src="{{ asset('assets/img/logo_opt_1.png') }}" width="100%" />
+                    <img alt="Logo" src="{{ asset('assets/img/logo_opt_1.jpeg') }}" width="100%" />
                     <!--end::Logo-->
                     <!--begin::Title-->
                     <br>

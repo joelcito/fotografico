@@ -165,6 +165,7 @@ class FacturaController extends Controller
                     $detalle->producto_id           = $item['servicio_id'];
                     $detalle->nombre_producto       = $servicio->nombre;
                     $detalle->descripcion_adicional = $item['descripcion_adicional'];
+                    $detalle->precio_compra         = $servicio->precio_compra;
                     $detalle->precio                = $item['precio'];
                     $detalle->cantidad              = $item['cantidad'];
                     $detalle->descuento             = $item['descuento'];
@@ -177,8 +178,6 @@ class FacturaController extends Controller
                     if ($servicio->control_stock == 1) {
                         //VERIFICAMOS QUE EXISTA EN ALMACEN ANTES DE CONTINUAR
                         $cantidad_almacen = $this->cantidadStockEmpresa($sucursal_id, $item['servicio_id']);
-
-                        // dd($cantidad_almacen, $sucursal_id, $item['servicio_id']);
 
                         if ($cantidad_almacen->estado) {
                             if ($item['cantidad'] > $cantidad_almacen->data['cantidad']) {

@@ -122,6 +122,7 @@
         </div>
         <!--end::Modal dialog-->
     </div>
+
     <div class="modal fade" id="modalStockSucursalProducto" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -193,6 +194,7 @@
         </div>
         <!--end::Modal dialog-->
     </div>
+
     <div class="modal fade" id="modalSalidaSucursalProducto" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -449,6 +451,161 @@
     </div>
     <!--Fin modal recargar masivo-->
 
+    <div class="modal fade" id="modalIngresoStockMasivo" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-xl">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h3 class="fw-bold">
+                        INGRESO MASIVO DE STOCK
+                    </h3>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    {{-- CABECERA --}}
+
+                    <div class="row mb-4">
+
+                        <div class="col-md-4">
+
+                            <label class="required fw-semibold mb-2">
+                                Sucursal
+                            </label>
+
+                            <select id="sucursal_stock_masivo" class="form-control">
+
+                                <option value="">
+                                    SELECCIONE SUCURSAL
+                                </option>
+
+                                @foreach($sucursales as $sucursal)
+
+                                <option value="{{ $sucursal->id }}">
+                                    {{ $sucursal->nombre }}
+                                </option>
+
+                                @endforeach
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-5">
+
+                            <label class="fw-semibold mb-2">
+                                Descripción
+                            </label>
+
+                            <input type="text" id="descripcion_stock_masivo" class="form-control"
+                                placeholder="Ej: Compra proveedor / reposición de stock">
+
+                        </div>
+
+
+                        <div class="col-md-3">
+
+                            <label class="fw-semibold mb-2">
+                                Buscar producto
+                            </label>
+
+                            <input type="text" id="buscar_stock_masivo" class="form-control" placeholder="Buscar...">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-striped align-middle" id="tabla_stock_masivo">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th width="5%">
+                                        #
+                                    </th>
+
+                                    <th>
+                                        Producto
+                                    </th>
+
+                                    <th width="10%">
+                                        Stock
+                                    </th>
+
+                                    <th width="14%">
+                                        Precio Compra
+                                    </th>
+
+                                    <th width="14%">
+                                        Precio Venta
+                                    </th>
+
+                                    <th width="14%">
+                                        Cantidad Ingreso
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="tbody_stock_masivo">
+
+                                {{-- AJAX --}}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="alert alert-info mt-3">
+
+                        Solo se registrarán los productos cuya
+                        <strong>cantidad de ingreso sea mayor a 0.</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button type="button" class="btn btn-success" id="btnGuardarStockMasivo" onclick="guardarStockMasivo()">
+
+                        <i class="fa fa-save"></i>
+
+                        Guardar ingreso masivo
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
         <!--begin::Content-->
@@ -469,6 +626,7 @@
                                     <a class="btn btn-sm fw-bold btn-danger ml-5" onclick="modalProductoMasivo()"><i class="fa fa-upload"></i>Registro Masivo</a>
                                 </div> --}}
                             </div>
+                            <a class="btn btn-sm fw-bold btn-success my-2" onclick="modalIngresoStockMasivo()"> <i class="fa fa-boxes"></i> Ingreso Stock Masivo</a>
                             <a class="btn btn-sm fw-bold btn-primary my-2" onclick="modalNuevoProducto()"><i class="fa fa-plus"></i>Nuevo</a>
                             {{-- <a class="btn btn-sm fw-bold btn-danger" href="{{ route('producto.pdfProductoStock') }}" target="_blank">Imprimir Productos</a> --}}
                         </div>
@@ -501,6 +659,52 @@
 
         $(document).ready(function() {
             ajaxListado();
+
+            $('#sucursal_stock_masivo').on('change', function() {
+                let sucursalId = $(this).val();
+                if (!sucursalId) {
+                    $('#tbody_stock_masivo').html(`
+                    <tr>
+                        <td colspan="6" class="text-center">
+
+                            Seleccione una sucursal.
+
+                        </td>
+                    </tr>
+                    `);
+                    return;
+                }
+                cargarProductosStockMasivo(sucursalId);
+
+            });
+
+            $('#buscar_stock_masivo').on('keyup', function() {
+
+                let buscar = $(this)
+                    .val()
+                    .toLowerCase()
+                    .trim();
+
+
+                $('.fila-stock-masivo').each(function() {
+
+                    let producto = $(this)
+                        .data('producto');
+
+
+                    if (producto.includes(buscar)) {
+
+                        $(this).show();
+
+                    } else {
+
+                        $(this).hide();
+
+                    }
+
+                });
+
+            });
         });
 
         function ajaxListado() {
@@ -990,6 +1194,340 @@
             } else {
                 $("#formulario_importar_servicios_productos_excel")[0].reportValidity();
             }
+        }
+
+        function modalIngresoStockMasivo() {
+
+            $('#sucursal_stock_masivo').val('');
+
+            $('#descripcion_stock_masivo').val('');
+
+            $('#buscar_stock_masivo').val('');
+
+            $('#tbody_stock_masivo').html(`
+            <tr>
+                <td colspan="6" class="text-center text-muted">
+
+                    Seleccione una sucursal.
+
+                </td>
+            </tr>
+            `);
+
+            $('#modalIngresoStockMasivo').modal('show');
+        }
+
+        function cargarProductosStockMasivo(sucursalId) {
+
+            $('#tbody_stock_masivo').html(`
+                <tr>
+                    <td colspan="6"
+                        class="text-center">
+
+                        Cargando productos...
+
+                    </td>
+                </tr>
+            `);
+
+
+            $.ajax({
+
+                url: "{{ route('producto.ajaxProductosStockMasivo') }}",
+
+                method: "POST",
+
+                data: {
+                    sucursal_id: sucursalId
+                },
+
+                success: function(resultado) {
+
+                    if (!resultado.estado) {
+                        return;
+                    }
+
+
+                    let html = '';
+
+
+                    resultado.productos.forEach(function(producto, index) {
+
+                        html += `
+
+                            <tr class="fila-stock-masivo"
+                                data-producto="${producto.nombre.toLowerCase()}">
+
+                                <td>
+                                    ${index + 1}
+                                </td>
+
+
+                                <td>
+
+                                    <strong>
+                                        ${producto.nombre}
+                                    </strong>
+
+                                    <br>
+
+                                    <small class="text-muted">
+                                        ${producto.codigo ?? ''}
+                                    </small>
+
+                                    <input type="hidden"
+                                        class="producto-id"
+                                        value="${producto.id}">
+
+                                </td>
+
+
+                                <td class="text-center">
+
+                                    <span class="badge badge-light-primary">
+
+                                        ${parseFloat(
+                                            producto.stock_actual ?? 0
+                                        )}
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <input type="number"
+                                        step="0.01"
+                                        min="0"
+                                        class="form-control form-control-sm precio-compra"
+                                        value="${producto.precio_compra ?? 0}">
+
+                                </td>
+
+
+                                <td>
+
+                                    <input type="number"
+                                        step="0.01"
+                                        min="0"
+                                        class="form-control form-control-sm precio-venta"
+                                        value="${producto.precio_venta ?? 0}">
+
+                                </td>
+
+
+                                <td>
+
+                                    <input type="number"
+                                        step="any"
+                                        min="0"
+                                        class="form-control form-control-sm cantidad-ingreso"
+                                        value="">
+
+                                </td>
+
+                            </tr>
+
+                        `;
+
+                    });
+
+
+                    $('#tbody_stock_masivo').html(html);
+
+                },
+
+                error: function() {
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'No se pudieron cargar los productos.'
+                    });
+
+                }
+
+            });
+        }
+
+        function guardarStockMasivo() {
+
+            let sucursalId =
+                $('#sucursal_stock_masivo').val();
+
+            let descripcion =
+                $('#descripcion_stock_masivo').val();
+
+
+            if (!sucursalId) {
+
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Atención',
+                    text: 'Debe seleccionar una sucursal.'
+                });
+
+                return;
+            }
+
+
+            let productos = [];
+
+
+            $('.fila-stock-masivo').each(function() {
+
+                let cantidad =
+                    parseFloat(
+                        $(this)
+                            .find('.cantidad-ingreso')
+                            .val()
+                    ) || 0;
+
+
+                // SOLO TOMAMOS LOS QUE TIENEN INGRESO
+                if (cantidad > 0) {
+
+                    productos.push({
+
+                        producto_id:
+                            $(this)
+                                .find('.producto-id')
+                                .val(),
+
+                        cantidad_ingreso:
+                            cantidad,
+
+                        precio_compra:
+                            parseFloat(
+                                $(this)
+                                    .find('.precio-compra')
+                                    .val()
+                            ) || 0,
+
+                        precio_venta:
+                            parseFloat(
+                                $(this)
+                                    .find('.precio-venta')
+                                    .val()
+                            ) || 0
+
+                    });
+
+                }
+
+            });
+
+
+            if (productos.length === 0) {
+
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Atención',
+                    text: 'Debe ingresar cantidad al menos a un producto.'
+                });
+
+                return;
+            }
+
+
+            Swal.fire({
+
+                icon: 'question',
+
+                title: '¿Registrar ingreso?',
+
+                html:
+                    'Se registrará el ingreso de <b>' +
+                    productos.length +
+                    '</b> productos.',
+
+                showCancelButton: true,
+
+                confirmButtonText: 'Sí, registrar',
+
+                cancelButtonText: 'Cancelar'
+
+            }).then(function(result) {
+
+                if (!result.isConfirmed) {
+                    return;
+                }
+
+
+                $('#btnGuardarStockMasivo')
+                    .prop('disabled', true);
+
+
+                $.ajax({
+
+                    url: "{{ route('producto.guardarStockMasivo') }}",
+
+                    method: "POST",
+
+                    data: {
+
+                        sucursal_id: sucursalId,
+
+                        descripcion: descripcion,
+
+                        productos: productos
+
+                    },
+
+                    success: function(resultado) {
+
+                        if (resultado.estado) {
+
+                            Swal.fire({
+
+                                icon: 'success',
+
+                                title: 'Registro exitoso',
+
+                                text:
+                                    resultado.cantidad +
+                                    ' productos ingresados correctamente.'
+
+                            });
+
+
+                            $('#modalIngresoStockMasivo')
+                                .modal('hide');
+
+
+                            ajaxListado();
+
+                        }
+
+                    },
+
+                    error: function(xhr) {
+
+                        let mensaje =
+                            xhr.responseJSON?.message ??
+                            'Ocurrió un error al registrar el stock.';
+
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: mensaje
+                        });
+
+                    },
+
+                    complete: function() {
+
+                        $('#btnGuardarStockMasivo')
+                            .prop('disabled', false);
+
+                    }
+
+                });
+
+            });
+
         }
 
     </script>

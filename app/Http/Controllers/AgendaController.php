@@ -56,6 +56,9 @@ class AgendaController extends Controller
                     'sucursal_id'         => $agenda->sucursal_id,
                     'observacion'         => $agenda->observacion,
                     'color'               => $agenda->color,
+
+                    // NUEVO
+                    'factura_id'          => $agenda->factura_id,
                 ]
             ];
         }
@@ -258,6 +261,13 @@ class AgendaController extends Controller
     public function eliminar(Request $request)
     {
         $agenda = Agenda::findOrFail($request->agenda_id);
+
+        if ($agenda->factura_id) {
+            return response()->json([
+                'estado' => false,
+                'mensaje' => 'No puede eliminar esta cita porque tiene una venta asociada.'
+            ], 422);
+        }
 
         $agenda->delete();
 

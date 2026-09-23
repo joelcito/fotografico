@@ -35,8 +35,15 @@
                             <div class="col-md">
                                 <div class="fv-row mb-7">
                                     <label class="required fw-semibold fs-6 mb-2">Costo</label>
-                                    <input type="number" class="form-control form-control-sm" id="precio_venta"
-                                        name="precio_venta">
+                                    <input type="number" class="form-control form-control-sm" id="precio_compra"
+                                        name="precio_compra">
+                                    <div class="text-danger error-message" id="error-precio_compra"></div>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-semibold fs-6 mb-2">Precio de venta</label>
+                                    <input type="number" class="form-control form-control-sm" id="precio_venta" name="precio_venta">
                                     <div class="text-danger error-message" id="error-precio_venta"></div>
                                 </div>
                             </div>

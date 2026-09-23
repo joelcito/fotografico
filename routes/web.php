@@ -73,6 +73,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/generarReporteSalida', [ProductoController::class, 'generarReporteSalida'])->name('producto.generarReporteSalida');
 
         Route::post('/importarServiciosProductosExcel', [ProductoController::class, 'importarServiciosProductosExcel'])->name('producto.importarServiciosProductosExcel');
+        Route::post('/ajax-productos-stock-masivo',[ProductoController::class, 'ajaxProductosStockMasivo'])->name('producto.ajaxProductosStockMasivo');
+        Route::post('/guardar-stock-masivo', [ProductoController::class, 'guardarStockMasivo'])->name('producto.guardarStockMasivo');
     });
 
     Route::prefix('/usuario')->group(function () {
@@ -195,6 +197,9 @@ Route::middleware('auth')->group(function () {
         // ==========================
         Route::get('/agenda/pdf', [ReporteController::class, 'agendaPdf'])->name('reporte.agenda.pdf');
         Route::get('/agenda/excel', [ReporteController::class, 'agendaExcel'])->name('reporte.agenda.excel');
+
+        Route::get('/utilidades/pdf',[ReporteController::class, 'utilidadesPdf'])->name('reporte.utilidades.pdf');
+        Route::get('/utilidades/excel',[ReporteController::class, 'utilidadesExcel'])->name('reporte.utilidades.excel');
     });
 
 });

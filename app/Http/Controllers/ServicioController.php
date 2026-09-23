@@ -34,14 +34,16 @@ class ServicioController extends Controller
 
             $request->validate([
                 'nombre' => 'required',
+                'precio_compra' => 'required',
                 'precio_venta' => 'required',
             ]);
 
             $id = $request->input('id');
 
-            $nombre  = $request->input('nombre');
-            $costo  = $request->input('precio_venta');
-            $usuario = Auth::user();
+            $nombre        = $request->input('nombre');
+            $costo         = $request->input('precio_venta');
+            $precio_compra = $request->input('precio_compra');
+            $usuario       = Auth::user();
 
             if ($id == 0) {
                 $servicio                     = new Producto();
@@ -51,10 +53,11 @@ class ServicioController extends Controller
                 $servicio->usuario_modificador_id = $usuario->id;
             }
 
-            $servicio->nombre           = $nombre;
-            $servicio->precio_venta     = $costo;
-            $servicio->control_stock    = false;
-            $servicio->tipo    = "SERVICIO";
+            $servicio->nombre        = $nombre;
+            $servicio->precio_venta  = $costo;
+            $servicio->precio_compra = $precio_compra;
+            $servicio->control_stock = false;
+            $servicio->tipo          = "SERVICIO";
             $servicio->save();
 
             $data = Respuesta::success(null, "Datos obtenidos correctamente");

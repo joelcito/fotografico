@@ -32,23 +32,10 @@
                             <label>Estado</label>
 
                             <select id="estado" class="form-control">
-
-                                <option value="PENDIENTE">
-                                    Pendiente
-                                </option>
-
-                                <option value="CONFIRMADO">
-                                    Confirmado
-                                </option>
-
-                                <option value="ATENDIDO">
-                                    Atendido
-                                </option>
-
-                                <option value="CANCELADO">
-                                    Cancelado
-                                </option>
-
+                                <option value="PENDIENTE">Pendiente</option>
+                                <option value="CONFIRMADO">Confirmado</option>
+                                <option value="ATENDIDO">Atendido</option>
+                                <option value="CANCELADO">Cancelado</option>
                             </select>
                         </div>
 
@@ -140,6 +127,24 @@
                     </div>
 
                     <hr>
+
+                    <div id="alertaVentaExistente" class="alert alert-success d-none mb-3">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <i class="fas fa-check-circle"></i>
+                                <strong>Esta cita ya tiene una venta generada.</strong>
+                                <br>
+                                <small>Venta N°<span id="numeroVentaAgenda"></span>
+                                </small>
+                            </div>
+                            <a href="#" id="btnVerVentaAgenda" class="btn btn-sm btn-success" target="_blank">
+                                <i class="fas fa-receipt"></i>
+                                Ver recibo
+                            </a>
+                        </div>
+
+                    </div>
 
                     <div class="row">
                         <div class="col-md-12">

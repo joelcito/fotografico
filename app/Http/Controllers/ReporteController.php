@@ -321,7 +321,6 @@ class ReporteController extends Controller
 
     private function consultaCuentasCobrar(Request $request)
     {
-
         $query = DB::table('facturas as f')
             ->leftJoin( 'clientes as c', 'c.id', '=', 'f.cliente_id')
             ->leftJoin( 'sucursales as s', 's.id', '=', 'f.sucursal_id' )
@@ -1413,5 +1412,361 @@ class ReporteController extends Controller
             $excel,
             'agenda.xlsx'
         );
+    }
+
+    public function utilidadesPdf(Request $request)
+    {
+        $datos = $this->consultaUtilidades($request);
+
+        $totalVenta = $datos->sum(function ($item) {
+            return (float) $item->venta_neta;
+        });
+
+        $totalCosto = $datos->sum(function ($item) {
+            return (float) $item->costo;
+        });
+
+        $totalUtilidad = $datos->sum(function ($item) {
+            return (float) $item->utilidad;
+        });
+
+
+        // PRODUCTOS
+        $utilidadProductos = $datos
+            ->filter(function ($item) {
+
+                return strtoupper(
+                    trim($item->tipo ?? '')
+                ) === 'PRODUCTO';
+            })
+            ->sum('utilidad');
+
+
+        // SERVICIOS
+        $utilidadServicios = $datos
+            ->filter(function ($item) {
+
+                return strtoupper(
+                    trim($item->tipo ?? '')
+                ) === 'SERVICIO';
+            })
+            ->sum('utilidad');
+
+
+        return Pdf::loadView(
+            'reporte.pdf.utilidades',
+            compact(
+                'datos',
+                'totalVenta',
+                'totalCosto',
+                'totalUtilidad',
+                'utilidadProductos',
+                'utilidadServicios',
+                'request'
+            )
+        )
+            ->setPaper('letter', 'landscape')
+            ->stream('reporte_utilidades.pdf');
+    }
+
+    public function utilidadesExcel(Request $request)
+    {
+        $datos = $this->consultaUtilidades($request);
+
+        $excel = new Spreadsheet();
+
+        $hoja = $excel->getActiveSheet();
+
+        $hoja->setTitle('Utilidades');
+
+        $hoja->mergeCells('A1:N1');
+
+        $hoja->setCellValue(
+            'A1',
+            'REPORTE DE UTILIDADES'
+        );
+
+        $hoja->fromArray([
+
+            'N°',
+            'Fecha',
+            'Documento',
+            'Código',
+            'Producto / Servicio',
+            'Tipo',
+            'Sucursal',
+            'Cantidad',
+            'P. Compra',
+            'P. Venta',
+            'Descuento',
+            'Venta Neta',
+            'Costo',
+            'Utilidad'
+
+        ], null, 'A3');
+
+
+        $fila = 4;
+
+        $totalVenta = 0;
+        $totalCosto = 0;
+        $totalUtilidad = 0;
+
+
+        foreach ($datos as $i => $dato) {
+
+            $hoja->fromArray([
+
+                $i + 1,
+
+                $dato->fecha,
+
+                $dato->numero_factura
+                    ?? $dato->numero_recibo,
+
+                $dato->codigo,
+
+                $dato->nombre_producto,
+
+                $dato->tipo,
+
+                $dato->sucursal,
+
+                $dato->cantidad,
+
+                $dato->precio_compra ?? 0,
+
+                $dato->precio,
+
+                $dato->descuento ?? 0,
+
+                $dato->venta_neta,
+
+                $dato->costo,
+
+                $dato->utilidad
+
+            ], null, 'A' . $fila);
+
+
+            $totalVenta +=
+                (float) $dato->venta_neta;
+
+            $totalCosto +=
+                (float) $dato->costo;
+
+            $totalUtilidad +=
+                (float) $dato->utilidad;
+
+            $fila++;
+        }
+
+
+        // ========================================
+        // TOTALES
+        // ========================================
+
+        $hoja->setCellValue(
+            'K' . $fila,
+            'TOTALES'
+        );
+
+        $hoja->setCellValue(
+            'L' . $fila,
+            $totalVenta
+        );
+
+        $hoja->setCellValue(
+            'M' . $fila,
+            $totalCosto
+        );
+
+        $hoja->setCellValue(
+            'N' . $fila,
+            $totalUtilidad
+        );
+
+
+        $this->estiloExcel(
+            $hoja,
+            'N',
+            $fila
+        );
+
+
+        return $this->descargarExcel(
+            $excel,
+            'reporte_utilidades.xlsx'
+        );
+    }
+
+    private function consultaUtilidades(Request $request)
+    {
+        [$inicio, $fin] = $this->fechas($request);
+
+        $query = DB::table('detalles as d')
+
+            ->join(
+                'facturas as f',
+                'f.id',
+                '=',
+                'd.factura_id'
+            )
+
+            ->leftJoin(
+                'productos as p',
+                'p.id',
+                '=',
+                'd.producto_id'
+            )
+
+            ->leftJoin(
+                'sucursales as s',
+                's.id',
+                '=',
+                'd.sucursal_id'
+            )
+
+            // DETALLES NO ELIMINADOS
+            ->whereNull('d.deleted_at')
+
+            // FACTURAS NO ELIMINADAS
+            ->whereNull('f.deleted_at')
+
+            // RANGO DE FECHAS
+            ->whereBetween(
+                'd.fecha',
+                [$inicio, $fin]
+            )
+
+            // NO TOMAR FACTURAS ANULADAS
+            ->where(function ($query) {
+
+                $query->whereNull('f.estado')
+                    ->orWhereRaw("UPPER(f.estado) <> 'ANULADO'");
+            });
+
+
+        // ============================================
+        // SUCURSAL
+        // ============================================
+
+        if ($request->filled('sucursal_id')) {
+
+            $query->where(
+                'd.sucursal_id',
+                $request->sucursal_id
+            );
+        }
+
+
+        // ============================================
+        // TIPO: PRODUCTO / SERVICIO
+        // ============================================
+
+        if ($request->filled('tipo')) {
+
+            $query->where(
+                'p.tipo',
+                $request->tipo
+            );
+        }
+
+
+        return $query
+
+            ->select(
+
+                'd.id',
+
+                'd.factura_id',
+
+                'd.fecha',
+
+                'd.producto_id',
+
+                'd.nombre_producto',
+
+                'd.precio_compra',
+
+                'd.precio',
+
+                'd.cantidad',
+
+                'd.descuento',
+
+                'd.total',
+
+                'd.importe',
+
+                'p.codigo',
+
+                'p.tipo',
+
+                's.nombre as sucursal',
+
+                'f.numero_factura',
+
+                'f.numero_recibo',
+
+                // ==========================
+                // VENTA BRUTA
+                // ==========================
+
+                DB::raw('
+                (COALESCE(d.precio,0) * COALESCE(d.cantidad,0))
+                AS venta_bruta
+            '),
+
+                // ==========================
+                // COSTO
+                // ==========================
+
+                DB::raw('
+                (
+                    COALESCE(d.precio_compra,0)
+                    *
+                    COALESCE(d.cantidad,0)
+                ) AS costo
+            '),
+
+                // ==========================
+                // VENTA NETA
+                // ==========================
+
+                DB::raw('
+                (
+                    (COALESCE(d.precio,0) * COALESCE(d.cantidad,0))
+                    -
+                    COALESCE(d.descuento,0)
+                ) AS venta_neta
+            '),
+
+                // ==========================
+                // UTILIDAD
+                // ==========================
+
+                DB::raw('
+                (
+                    (
+                        COALESCE(d.precio,0)
+                        *
+                        COALESCE(d.cantidad,0)
+                    )
+                    -
+                    COALESCE(d.descuento,0)
+                    -
+                    (
+                        COALESCE(d.precio_compra,0)
+                        *
+                        COALESCE(d.cantidad,0)
+                    )
+                ) AS utilidad
+            ')
+            )
+
+            ->orderBy('d.fecha', 'asc')
+
+            ->get();
     }
 }

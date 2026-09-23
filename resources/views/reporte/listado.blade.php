@@ -597,6 +597,62 @@
 
         </div>
 
+        {{-- ===================================================== --}}
+        {{-- UTILIDADES --}}
+        {{-- ===================================================== --}}
+
+        @rol(1)
+
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <div class="card shadow-sm border-0 h-100">
+
+                <div class="card-body">
+
+                    <div class="d-flex align-items-center mb-3">
+
+                        <div class="mr-3">
+
+                            <i class="fas fa-chart-line fa-3x text-success"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5 class="mb-1">
+                                Reporte de Utilidades
+                            </h5>
+
+                            <small class="text-muted">
+                                Utilidad generada por productos y servicios vendidos.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+
+                        <div class="col-6">
+                            <button type="button" class="btn btn-danger btn-block" onclick="generarReporte('{{ route('reporte.utilidades.pdf') }}')"><i class="fas fa-file-pdf"></i> PDF</button>
+                        </div>
+
+                        <div class="col-6">
+                            <button type="button" class="btn btn-success btn-block" onclick="generarReporte('{{ route('reporte.utilidades.excel') }}')"><i class="fas fa-file-excel"></i> Excel</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        @endrol
+
 
     </div>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agenda;
 use App\Models\Caja;
 use App\Models\Categoria;
 use App\Models\Factura;
@@ -206,9 +207,18 @@ class PagoController extends Controller
                 $nuevo->save();
 
                 if (($saldo - $importe_pago) == 0) {
-                    $factura = Factura::find($factura_id);
+                    $factura              = Factura::find($factura_id);
                     $factura->estado_pago = 'PAGADO';
                     $factura->save();
+
+                    // VERIFICAMOS LA AGENDA ATENDIDA
+                    $agenda = Agenda::where('factura_id',$factura_id)->first();
+                    if($agenda){
+                        $agenda->usuario_modificador_id = $usuario->id;
+                        $agenda->estado                 = "ATENDIDO";
+                        $agenda->save();
+                    }
+
                 }
 
                 $data = Respuesta::success(null, "Datos obtenidos correctamente");

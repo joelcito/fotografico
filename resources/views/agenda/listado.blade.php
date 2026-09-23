@@ -123,72 +123,79 @@ document.addEventListener('DOMContentLoaded', function () {
             const datos = evento.extendedProps;
 
             $('#agenda_id').val(evento.id);
-
             $('#titulo').val(evento.title);
-
-            $('#estado').val(
-                datos.estado ?? 'PENDIENTE'
-            );
-
-            $('#cliente_id').val(
-                datos.cliente_id ?? ''
-            );
-
-            $('#usuario_asignado_id').val(
-                datos.usuario_asignado_id ?? ''
-            );
-
-            $('#sucursal_id').val(
-                datos.sucursal_id ?? ''
-            );
-
-            $('#descripcion').val(
-                datos.descripcion ?? ''
-            );
-
-            $('#observacion').val(
-                datos.observacion ?? ''
-            );
-
-            $('#color').val(
-                datos.color ?? '#3788d8'
-            );
-
+            $('#estado').val(datos.estado ?? 'PENDIENTE');
+            $('#cliente_id').val(datos.cliente_id ?? '');
+            $('#usuario_asignado_id').val(datos.usuario_asignado_id ?? '');
+            $('#sucursal_id').val(datos.sucursal_id ?? '');
+            $('#descripcion').val(datos.descripcion ?? '');
+            $('#observacion').val(datos.observacion ?? '');
+            $('#color').val(datos.color ?? '#3788d8');
 
             // FECHA INICIO
             if (evento.start) {
-
-                $('#fecha_inicio').val(
-                    fechaInput(evento.start)
-                );
-
+                $('#fecha_inicio').val(fechaInput(evento.start));
             } else {
-
                 $('#fecha_inicio').val('');
-
             }
-
 
             // FECHA FIN
             if (evento.end) {
+                $('#fecha_fin').val(fechaInput(evento.end));
+            } else {
+                $('#fecha_fin').val('');
+            }
 
-                $('#fecha_fin').val(
-                    fechaInput(evento.end)
-                );
+            // ================================================
+            // VERIFICAR SI LA AGENDA YA TIENE VENTA
+            // ================================================
+
+            if (datos.factura_id) {
+
+                // Ya existe una venta
+                $('#generar_venta').prop('checked', true).prop('disabled', true);
+
+                // No mostramos formulario para generar otra venta
+                $('#bloqueVentaAgenda').hide();
+
+                // Mostrar aviso
+                $('#alertaVentaExistente').removeClass('d-none');
+
+                $('#numeroVentaAgenda').text(datos.factura_id);
+
+                // URL DEL RECIBO
+                $('#btnVerVentaAgenda').attr('href',"{{ url('factura/imprimeRecibo') }}/" + datos.factura_id);
+
+                // ======================================
+                // BLOQUEAMOS CLIENTE Y SUCURSAL
+                // ======================================
+
+                $('#cliente_id').prop('disabled', true);
+                $('#sucursal_id').prop('disabled', true);
 
             } else {
 
-                $('#fecha_fin').val('');
+                // Esta cita todavía NO tiene venta
+                $('#generar_venta').prop('checked', false).prop('disabled', false);
 
+                $('#bloqueVentaAgenda').hide();
+
+                $('#alertaVentaExistente').addClass('d-none');
+
+                $('#numeroVentaAgenda').text('');
+
+                $('#btnVerVentaAgenda').attr('href', '#');
+
+                // ======================================
+                // PUEDE CAMBIAR CLIENTE Y SUCURSAL
+                // ======================================
+
+                $('#cliente_id').prop('disabled', false);
+                $('#sucursal_id').prop('disabled', false);
             }
 
-
-            $('#tituloModal').text(
-                'Editar cita'
-            );
-
+            $('#tituloModal').text('Editar cita');
             $('#btnEliminar').removeClass('d-none');
-
             $('#modalAgenda').modal('show');
         },
 
@@ -274,60 +281,31 @@ document.addEventListener('DOMContentLoaded', function () {
         let datos = {
 
             _token: "{{ csrf_token() }}",
-
             agenda_id: $('#agenda_id').val(),
-
             titulo: $('#titulo').val(),
-
             estado: $('#estado').val(),
-
             fecha_inicio: $('#fecha_inicio').val(),
-
             fecha_fin: $('#fecha_fin').val(),
-
             cliente_id: $('#cliente_id').val(),
-
-            usuario_asignado_id:
-                $('#usuario_asignado_id').val(),
-
-            sucursal_id:
-                $('#sucursal_id').val(),
-
+            usuario_asignado_id: $('#usuario_asignado_id').val(),
+            sucursal_id: $('#sucursal_id').val(),
             color: $('#color').val(),
-
-            descripcion:
-                $('#descripcion').val(),
-
-            observacion:
-                $('#observacion').val(),
+            descripcion: $('#descripcion').val(),
+            observacion: $('#observacion').val(),
 
             // ==========================
             // DATOS PARA VENTA
             // ==========================
 
-            generar_venta:
-                $('#generar_venta').is(':checked') ? 1 : 0,
-
-            servicio_id:
-                $('#servicio_id_agenda').val(),
-
-            cantidad:
-                $('#cantidad_agenda').val(),
-
-            precio:
-                $('#precio_agenda').val(),
-
-            monto_total:
-                $('#total_agenda').val(),
-
-            monto_pagado:
-                $('#monto_pagado_agenda').val(),
-
-            tipo_pago:
-                $('#tipo_pago_agenda').val(),
-
-            descripcion_venta:
-                $('#descripcion_venta_agenda').val()
+            // generar_venta: $('#generar_venta').is(':checked') ? 1 : 0,
+            generar_venta: $('#generar_venta').is(':checked') && !$('#generar_venta').is(':disabled') ? 1 : 0,
+            servicio_id: $('#servicio_id_agenda').val(),
+            cantidad: $('#cantidad_agenda').val(),
+            precio: $('#precio_agenda').val(),
+            monto_total: $('#total_agenda').val(),
+            monto_pagado: $('#monto_pagado_agenda').val(),
+            tipo_pago: $('#tipo_pago_agenda').val(),
+            descripcion_venta: $('#descripcion_venta_agenda').val()
         };
 
 
@@ -634,26 +612,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================================
 
     function limpiarFormularioAgenda() {
-
         $('#formAgenda')[0].reset();
-
         $('#agenda_id').val('');
+        $('#estado').val('PENDIENTE');
+        $('#color').val('#3788d8');
+        $('#tituloModal').text('Nueva cita');
+        $('#btnEliminar').addClass('d-none');
 
-        $('#estado').val(
-            'PENDIENTE'
-        );
+        // ========================================
+        // LIMPIAR VENTA
+        // ========================================
 
-        $('#color').val(
-            '#3788d8'
-        );
-
-        $('#tituloModal').text(
-            'Nueva cita'
-        );
-
-        $('#btnEliminar')
-            .addClass('d-none');
-
+        $('#generar_venta').prop('checked', false).prop('disabled', false);
+        $('#bloqueVentaAgenda').hide();
+        $('#alertaVentaExistente').addClass('d-none');
+        $('#numeroVentaAgenda').text('');
+        $('#btnVerVentaAgenda').attr('href', '#');
+        $('#servicio_id_agenda').val('');
+        $('#cantidad_agenda').val(1);
+        $('#precio_agenda').val('0.00');
+        $('#total_agenda').val('0.00');
+        $('#monto_pagado_agenda').val('0.00');
+        $('#tipo_pago_agenda').val('');
+        $('#descripcion_venta_agenda').val('');
     }
 
 

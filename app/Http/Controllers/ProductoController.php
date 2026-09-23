@@ -8,6 +8,7 @@ use App\Models\Sucursal;
 use App\Utils\Respuesta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
@@ -238,5 +239,218 @@ class ProductoController extends Controller
             $data = Respuesta::error(null, "No existe");
         }
         return $data;
+    }
+
+    public function ajaxProductosStockMasivo(Request $request)
+    {
+        if (!$request->ajax()) {
+
+            return response()->json([
+                'estado' => false,
+                'message' => 'Solicitud no válida.'
+            ], 400);
+        }
+
+
+        $request->validate([
+            'sucursal_id' => 'required|integer'
+        ]);
+
+
+        $sucursalId = $request->sucursal_id;
+
+
+        $productos = Producto::query()
+            ->select(
+                'productos.id',
+                'productos.codigo',
+                'productos.nombre',
+                'productos.precio_compra',
+                'productos.precio_venta'
+            )
+            ->where('tipo', 'PRODUCTO')
+            ->whereNull('productos.deleted_at')
+            ->orderBy('productos.nombre')
+            ->get();
+
+
+        foreach ($productos as $producto) {
+
+            $ingreso = Movimiento::where('producto_id',$producto->id)
+                                ->where('sucursal_id',$sucursalId)
+                                ->sum('ingreso');
+
+            $salida = Movimiento::where('producto_id',$producto->id)
+                                ->where('sucursal_id',$sucursalId)
+                                ->sum('salida');
+
+            $producto->stock_actual = (float) $ingreso - (float) $salida;
+        }
+
+
+        return response()->json([
+            'estado' => true,
+            'productos' => $productos
+        ]);
+    }
+
+    public function guardarStockMasivo(Request $request)
+    {
+        if (!$request->ajax()) {
+
+            return response()->json([
+                'estado' => false,
+                'message' => 'Solicitud no válida.'
+            ], 400);
+        }
+
+
+        $request->validate([
+
+            'sucursal_id' => [
+                'required',
+                'integer'
+            ],
+
+            'productos' => [
+                'required',
+                'array',
+                'min:1'
+            ],
+
+            'productos.*.producto_id' => [
+                'required',
+                'integer'
+            ],
+
+            'productos.*.cantidad_ingreso' => [
+                'required',
+                'numeric',
+                'gt:0'
+            ],
+
+            'productos.*.precio_compra' => [
+                'required',
+                'numeric',
+                'min:0'
+            ],
+
+            'productos.*.precio_venta' => [
+                'required',
+                'numeric',
+                'min:0'
+            ],
+
+        ]);
+
+
+        DB::beginTransaction();
+
+
+        try {
+
+            $usuario = Auth::user();
+
+            $sucursalId =
+                $request->sucursal_id;
+
+            $descripcion =
+                $request->descripcion;
+
+
+            $cantidadRegistrados = 0;
+
+
+            foreach ($request->productos as $item) {
+
+
+                // ==========================================
+                // PRODUCTO
+                // ==========================================
+
+                $producto = Producto::findOrFail(
+                    $item['producto_id']
+                );
+
+
+                // ACTUALIZAMOS ÚLTIMOS PRECIOS
+                $producto->precio_compra =
+                    $item['precio_compra'];
+
+                $producto->precio_venta =
+                    $item['precio_venta'];
+
+                $producto->save();
+
+
+                // ==========================================
+                // MOVIMIENTO DE INVENTARIO
+                // ==========================================
+
+                $movimiento =
+                    new Movimiento();
+
+                $movimiento->producto_id =
+                    $producto->id;
+
+                $movimiento->sucursal_id =
+                    $sucursalId;
+
+                $movimiento->ingreso =
+                    $item['cantidad_ingreso'];
+
+                $movimiento->salida = 0;
+
+                $movimiento->usuario_creador_id =
+                    $usuario->id;
+
+                $movimiento->fecha =
+                    now();
+
+                $movimiento->descripcion =
+                    $descripcion
+                    ?: 'INGRESO MASIVO DE STOCK';
+
+                $movimiento->precio_compra =
+                    $item['precio_compra'];
+
+                $movimiento->precio_venta =
+                    $item['precio_venta'];
+
+                $movimiento->save();
+
+
+                $cantidadRegistrados++;
+            }
+
+
+            DB::commit();
+
+
+            return response()->json([
+
+                'estado' => true,
+
+                'cantidad' =>
+                $cantidadRegistrados,
+
+                'message' =>
+                'Stock registrado correctamente.'
+
+            ]);
+        } catch (\Throwable $e) {
+
+            DB::rollBack();
+
+
+            return response()->json([
+
+                'estado' => false,
+
+                'message' =>
+                $e->getMessage()
+
+            ], 500);
+        }
     }
 }

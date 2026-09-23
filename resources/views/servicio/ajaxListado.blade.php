@@ -5,6 +5,7 @@
             <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                 <th>Nombre</th>
                 <th>Costo</th>
+                <th>Precio venta</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -12,6 +13,7 @@
             @forelse ( $servicios as $ser)
                 <tr>
                     <td>{{ $ser->nombre }}</td>
+                    <td>{{ $ser->precio_compra }}</td>
                     <td>{{ $ser->precio_venta }}</td>
                     <td>
                         @rol(1)

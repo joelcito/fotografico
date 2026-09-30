@@ -15,9 +15,10 @@ class CajaController extends Controller
     {
 
         $usuario = Auth::user();
+        $sucursal = $usuario->sucursal;
 
         $caja = new Caja();
-        $cajaAbierta = $caja->sacaCajaVigente($usuario->id);
+        $cajaAbierta = $caja->sacaCajaVigente($sucursal->id);
 
         $usuarios = User::all();
 

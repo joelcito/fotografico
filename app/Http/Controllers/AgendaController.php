@@ -304,17 +304,10 @@ class AgendaController extends Controller
         // DATOS PRINCIPALES
         // =========================================================
 
-        $cliente = Cliente::findOrFail(
-            $request->cliente_id
-        );
+        $cliente = Cliente::findOrFail($request->cliente_id);
+        $servicio = Producto::findOrFail($request->servicio_id);
 
-        $servicio = Producto::findOrFail(
-            $request->servicio_id
-        );
-
-        $sucursal_id = $request->sucursal_id
-            ?? $usuario->sucursal->id;
-
+        $sucursal_id = $request->sucursal_id ?? $usuario->sucursal->id;
 
         $cantidad = (float) $request->cantidad;
 
@@ -325,7 +318,6 @@ class AgendaController extends Controller
         $monto_pagado = (float) (
             $request->monto_pagado ?? 0
         );
-
 
         // =========================================================
         // VALIDACIONES
@@ -349,8 +341,7 @@ class AgendaController extends Controller
 
             $caja = new Caja();
 
-            $cajaAbierta =
-                $caja->sacaCajaVigente($usuario->id);
+            $cajaAbierta = $caja->sacaCajaVigente($usuario->sucursal->id);
 
             if (!$cajaAbierta) {
 

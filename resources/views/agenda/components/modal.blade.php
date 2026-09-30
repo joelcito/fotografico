@@ -48,24 +48,25 @@
                         </div>
 
                         <div class="col-md-6 mb-3">
-
                             <label>Fecha y hora fin</label>
-
                             <input type="datetime-local" id="fecha_fin" class="form-control">
-
                         </div>
 
                         <div class="col-md-6 mb-3">
-
-                            <label>Cliente</label>
-
-                            <select id="cliente_id" class="form-control">
-                                <option value="">Seleccione</option>
-                                @foreach($clientes as $cliente)
-                                <option value="{{ $cliente->id }}">{{ $cliente->nombres." ".$cliente->ap_paterno." ".$cliente->ap_materno }}</option>
-                                @endforeach
-                            </select>
-
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <label>Cliente</label>
+                                    <select id="cliente_id" class="form-control">
+                                        <option value="">Seleccione</option>
+                                        @foreach($clientes as $cliente)
+                                        <option value="{{ $cliente->id }}">{{ $cliente->nombres." ".$cliente->ap_paterno." ".$cliente->ap_materno }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-icon btn-circle btn-sm btn-info mt-7" title="Agregar usuario" onclick="modalAgregarCliente()"><i class="fa fa-user-plus"></i></button>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-md-6 mb-3">

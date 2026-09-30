@@ -130,7 +130,7 @@ class FacturaController extends Controller
 
                 // PREGUNTAMOS POR LA CAJA
                 $caja = new Caja();
-                $cajaAbierta = $caja->sacaCajaVigente($usuario->id);
+                $cajaAbierta = $caja->sacaCajaVigente($sucursal_id);
                 if ($cajaAbierta == null) {
                     $data['estado'] = false;
                     $data['text'] = 'NO SE ENCONTRO UN CAJA ABIERTA';

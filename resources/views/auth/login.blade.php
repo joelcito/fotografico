@@ -114,7 +114,12 @@
                             <div class="fv-row mb-8">
                                 <!--begin::Email-->
                                 <input type="text" placeholder="Correo" name="email" autocomplete="off"
-                                    class="form-control bg-transparent" />
+                                    class="form-control bg-transparent" value="{{ @old('email') }}" />
+                                    @error('email')
+                                    <div class="alert alert-danger mt-3">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 <!--end::Email-->
                             </div>
                             <!--end::Input group=-->

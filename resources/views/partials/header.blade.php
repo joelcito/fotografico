@@ -1,3 +1,13 @@
+@php
+    use Carbon\Carbon;
+
+    $fechaLimitePlan = Carbon::parse(config('control.FECHA_LIMITE'))->endOfDay();
+    $hoy = now();
+    $diasRestantes = $hoy->startOfDay()->diffInDays(
+        $fechaLimitePlan->copy()->startOfDay(),
+        false
+    );
+@endphp
 <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}"
     data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}"
     data-kt-sticky-animation="false">
@@ -36,6 +46,70 @@
             <!--end::Menu wrapper-->
             <!--begin::Navbar-->
             <div class="app-navbar flex-shrink-0">
+                {{-- ===================================================== --}}
+                {{-- FECHA Y HORA ACTUAL --}}
+                {{-- ===================================================== --}}
+                <div class="app-navbar-item me-3 d-none d-md-flex">
+                    <div class="d-flex flex-column text-end">
+
+                        <span class="fw-bold fs-7 text-gray-800">
+                            <i class="fa fa-calendar-alt me-1"></i>
+                            <span id="fecha-actual"></span>
+                        </span>
+
+                        <span class="fw-semibold fs-8 text-muted">
+                            <i class="fa fa-clock me-1"></i>
+                            <span id="hora-actual"></span>
+                        </span>
+
+                    </div>
+                </div>
+
+
+                {{-- ===================================================== --}}
+                {{-- ESTADO DEL PLAN --}}
+                {{-- ===================================================== --}}
+                <div class="app-navbar-item me-3">
+
+                    @if ($diasRestantes > 5)
+
+                    <span class="badge badge-light-success fs-7 px-3 py-2">
+                        <i class="fa fa-check-circle text-success me-1"></i>
+
+                        Plan activo hasta el
+                        {{ $fechaLimitePlan->format('d/m/Y') }}
+                    </span>
+
+                    @elseif ($diasRestantes >= 1)
+
+                    <span class="badge badge-light-warning fs-7 px-3 py-2">
+                        <i class="fa fa-exclamation-triangle text-warning me-1"></i>
+
+                        Su plan vence en
+                        {{ $diasRestantes }}
+                        {{ $diasRestantes == 1 ? 'día' : 'días' }}
+                    </span>
+
+                    @elseif ($diasRestantes == 0)
+
+                    <span class="badge badge-light-danger fs-7 px-3 py-2">
+                        <i class="fa fa-exclamation-circle text-danger me-1"></i>
+
+                        Su plan vence hoy
+                    </span>
+
+                    @else
+
+                    <span class="badge badge-light-danger fs-7 px-3 py-2">
+                        <i class="fa fa-times-circle text-danger me-1"></i>
+
+                        PLAN VENCIDO
+                    </span>
+
+                    @endif
+
+                </div>
+
                 <!--begin::Theme mode-->
                 <div class="app-navbar-item ms-1 ms-md-4">
                     <!--begin::Menu toggle-->
@@ -174,3 +248,31 @@
     </div>
     <!--end::Header container-->
 </div>
+
+
+<script>
+    function actualizarFechaHora() {
+
+        const ahora = new Date();
+
+        const fecha = ahora.toLocaleDateString('es-BO', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+
+        const hora = ahora.toLocaleTimeString('es-BO', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+
+        document.getElementById('fecha-actual').textContent = fecha;
+        document.getElementById('hora-actual').textContent = hora;
+    }
+
+    actualizarFechaHora();
+
+    setInterval(actualizarFechaHora, 1000);
+</script>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
@@ -40,6 +41,26 @@ class LoginRequest extends FormRequest
      */
     public function authenticate(): void
     {
+
+        // ==========================================================
+        // VALIDAMOS VIGENCIA DEL PLAN
+        // ==========================================================
+        $fechaLimite = config('control.FECHA_LIMITE');
+
+        if ($fechaLimite) {
+
+            $fechaLimite = Carbon::parse($fechaLimite)->endOfDay();
+
+            if (now()->greaterThan($fechaLimite)) {
+
+                throw ValidationException::withMessages([
+                    'email' => 'PLAN VENCIDO. El servicio venció el ' .
+                        $fechaLimite->format('d/m/Y') .
+                        '. Comuníquese con el administrador para renovar.',
+                ]);
+            }
+        }
+
         $this->ensureIsNotRateLimited();
 
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {

@@ -66,7 +66,9 @@ return [
     */
 
     // 'timezone' => 'UTC',
-    'timezone' => 'America/La_Paz',
+    // 'timezone' => 'America/La_Paz',
+    'timezone' => env('TIMEZONE', 'en'),
+
 
     /*
     |--------------------------------------------------------------------------
